@@ -3,8 +3,8 @@ require! {
 	"./data.ls": data
 	"./bonus.ls": bonus
 }
-slotData = <[name point type exp exp12 expM exp12M gold gold12 goldM gold12M]>
-slotBonus = <[name sun mon tue wed thu fri sat]>
+slotData = <[stage diff name point type exp exp12 expM exp12M gold gold12 goldM gold12M]>
+slotBonus = <[name 0 1 2 3 4 5 6]>
 
 output = []
 tempBonus = []
@@ -20,22 +20,22 @@ for bonusValue, i in bonus
 		tempBonus[i][slotValue] = bonus[i][j]
 
 for data, i in output
-	data.sun = 0
-	data.mon = 0
-	data.tue = 0
-	data.wed = 0
-	data.thu = 0
-	data.fri = 0
-	data.sat = 0
+	data["0"] = "0"
+	data["1"] = "0"
+	data["2"] = "0"
+	data["3"] = "0"
+	data["4"] = "0"
+	data["5"] = "0"
+	data["6"] = "0"
 	for temp, j in tempBonus
 		if data.name is temp.name
-			data.sun = temp.sun
-			data.mon = temp.mon
-			data.tue = temp.tue
-			data.wed = temp.wed
-			data.thu = temp.thu
-			data.fri = temp.fri
-			data.sat = temp.sat
+			data["0"] = temp["0"]
+			data["1"] = temp["1"]
+			data["2"] = temp["2"]
+			data["3"] = temp["3"]
+			data["4"] = temp["4"]
+			data["5"] = temp["5"]
+			data["6"] = temp["6"]
 			break
 
 output = JSON.stringify output

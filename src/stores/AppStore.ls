@@ -5,6 +5,7 @@ require! {
 	"../dispatcher/AppDispatcher.ls": AppDispatcher
 	"../constants/ConstActions.ls": ConstActions
 	"../constants/constants.ls": Constants
+	"../raw/data.json": RawData
 }
 
 CHANGE_EVENT = 'change'
@@ -14,34 +15,45 @@ CHANGE_EVENT = 'change'
 # ===============================================================================
 _data = {
 	day: 0
+	output: []
+	toggle: [0 0 0 1 0 0]
 }
-
 
 # ===============================================================================
 # INITIAL DATABASE
 # ===============================================================================
+db = new lokijs "db"
+dbStage = db.addCollection "dbStage"
 
+for data, i in RawData
+	dbStage.insert data
 
+stageFirstN = dbStage.chain().find({ 'stage': 1 }).find({ 'diff': 'N' }).simplesort('name').data()
+stageFirstH = dbStage.chain().find({ 'stage': 1 }).find({ 'diff': 'H' }).simplesort('name').data()
+stageSecondN = dbStage.chain().find({ 'stage': 2 }).find({ 'diff': 'N' }).simplesort('name').data()
+stageSecondH = dbStage.chain().find({ 'stage': 2 }).find({ 'diff': 'H' }).simplesort('name').data()
+stageThirdN = dbStage.chain().find({ 'stage': 3 }).find({ 'diff': 'N' })simplesort('name').data()
+stageThirdH = dbStage.chain().find({ 'stage': 3 }).find({ 'diff': 'H' })simplesort('name').data()
+_data.output = [stageFirstN, stageFirstH, stageSecondN, stageSecondH, stageThirdN, stageThirdH]
 
 # ===============================================================================
 # APP STORE FUNCTIONS
 # ===============================================================================
 dayChange = (day) !->
 	_data.day = day
-	#if day is 0
-	#	_data.output = sun
-	#else if day is 1
-	#	_data.output = mon
-	#else if day is 2
-	#	_data.output = tue
-	#else if day is 3
-	#	_data.output = wed
-	#else if day is 4
-	#	_data.output = thu
-	#else if day is 5
-	#	_data.output = fri
-	#else if day is 6
-	#	_data.output = sat
+
+toggleChange = (toggle) !->
+	_data.toggle = toggle
+
+sortChange = (sortValue) !->
+	stageFirstN = dbStage.chain().find({ 'stage': 1 }).find({ 'diff': 'N' }).simplesort(sortValue).data()
+	stageFirstH = dbStage.chain().find({ 'stage': 1 }).find({ 'diff': 'H' }).simplesort(sortValue).data()
+	stageSecondN = dbStage.chain().find({ 'stage': 2 }).find({ 'diff': 'N' }).simplesort(sortValue).data()
+	stageSecondH = dbStage.chain().find({ 'stage': 2 }).find({ 'diff': 'H' }).simplesort(sortValue).data()
+	stageThirdN = dbStage.chain().find({ 'stage': 3 }).find({ 'diff': 'N' })simplesort(sortValue).data()
+	stageThirdH = dbStage.chain().find({ 'stage': 3 }).find({ 'diff': 'H' })simplesort(sortValue).data()
+	_data.output = [stageFirstN, stageFirstH, stageSecondN, stageSecondH, stageThirdN, stageThirdH]
+
 
 # ===============================================================================
 # APP STORE MAIN
@@ -64,6 +76,12 @@ AppDispatcher.register( (action) !->
 	switch action.actionType
 	case ConstActions.dayChange
 		dayChange(action.day)
+		AppStore.emitChange()
+	case ConstActions.toggleChange
+		toggleChange(action.toggle)
+		AppStore.emitChange()
+	case ConstActions.sortChange
+		sortChange(action.sortValue)
 		AppStore.emitChange()
 )
 

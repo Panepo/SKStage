@@ -14,5 +14,11 @@ AppAction =
 			actionType: ConstActions.dayChange
 			day: day
 			)
+	sortChange: (sortValue) !->
+		AppDispatcher.dispatch(
+			actionType: ConstActions.sortChange
+			sortValue: sortValue
+			)
+
 
 module.exports = AppAction
