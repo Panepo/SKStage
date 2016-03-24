@@ -17,24 +17,14 @@ Content = React.createClass do
 	propTypes:
 		day: ReactPropTypes.number.isRequired
 		output: ReactPropTypes.array.isRequired
-	
-	componentDidUpdate: !->
-		componentHandler.upgradeDom()
 
 	handleDayChange: (event) !->
 		AppAction.dayChange parseInt event.target.id
-	
-	handleChange: (event) !->
-		trId = event.target.id + "tr"
-		if event.target.checked
-			document.getElementById(trId).style.color = "blue"
-		else
-			document.getElementById(trId).style.color = "black"
 
 	render: ->
 		div className: "content",
 			h4 null, "政剣マニフェスティア戦挙区効率表"
-			"更新: 2016/03/23"
+			"更新: 2016/03/24"
 			div className: "mdl-tabs mdl-js-tabs mdl-js-ripple-effect",
 				div className: "mdl-tabs__tab-bar",
 					for list, i in Constants.listTab

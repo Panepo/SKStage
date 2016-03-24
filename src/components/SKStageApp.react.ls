@@ -23,20 +23,10 @@ SKStageApp = React.createClass do
 	
 	componentDidMount: !->
 		AppStore.addChangeListener @onChange
-		dateTime = new Date()
-		dateDay = dateTime.getUTCDay()
-		dateHour = dateTime.getUTCHours()
-		dateHour = dateHour + 9
-		if dateHour >= 24
-			dateHour = dateHour - 24
-			dateDay = dateDay + 1
-			if dateDay >= 7
-				dateDay = dateDay - 7
-		AppAction.dayChange dateDay
 
 	componentWillUnmount: !->
 		AppStore.removeChangeListener @onChange
-		
+	
 	onChange: !->
 		@setState {
 			data: AppStore.getData()
@@ -45,7 +35,10 @@ SKStageApp = React.createClass do
 	render: ->
 		div null,
 			div className: "demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100",
-				Header toggle:@state.data.toggle, null
+				Header {
+					toggle:@state.data.toggle
+					bonus:@state.data.bonus
+				}, null
 				div className: "demo-main mdl-layout__content",
 					div className: "demo-container mdl-grid",
 						div className: "mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone", null

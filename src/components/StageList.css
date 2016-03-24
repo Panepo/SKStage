@@ -1,9 +1,13 @@
 .expBonus {
-	color: blue
+	color: #009900;
+	font-weight: bold;
+	text-decoration: underline;
 }
 
 .goldBonus {
-	color: green
+	color: #ff3300;
+	font-weight: bold;
+	text-decoration: underline;
 }
 
 .mdl-data-table {

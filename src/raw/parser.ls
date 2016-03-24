@@ -2,8 +2,12 @@ require! {
 	"fs": fs
 	"./data.ls": data
 	"./bonus.ls": bonus
+	"./char.ls": chars
 }
-slotData = <[stage diff name point type exp exp12 expM exp12M gold gold12 goldM gold12M]>
+# ===============================================================================
+# PARSE STAGE DATA
+# ===============================================================================
+slotData = <[stage diff name point type exp exp12 expM exp12M gold gold12 goldM gold12M title]>
 slotBonus = <[name 0 1 2 3 4 5 6]>
 
 output = []
@@ -12,12 +16,12 @@ tempBonus = []
 for dataValue, i in data
 	output[i] = {}
 	for slotValue, j in slotData
-		output[i][slotValue] = data[i][j]
+		output[i][slotValue] = dataValue[j]
 
 for bonusValue, i in bonus
 	tempBonus[i] = {}
 	for slotValue, j in slotBonus
-		tempBonus[i][slotValue] = bonus[i][j]
+		tempBonus[i][slotValue] = bonusValue[j]
 
 for data, i in output
 	data["0"] = "0"
@@ -41,3 +45,19 @@ for data, i in output
 output = JSON.stringify output
 console.log "data.json arrange complete!"
 fs.writeFileSync "./src/raw/data.json", output
+
+# ===============================================================================
+# PARSE CHAR DATA
+# ===============================================================================
+#slotChar = <[day name type rare image ]>
+slotChar = <[day X X X image ]>
+outChar = []
+for char, i in chars
+	outChar[i] = {}
+	for slotValue, j in slotChar
+		if slotValue !== "X"
+			outChar[i][slotValue] = char[j]
+
+outChar = JSON.stringify outChar
+console.log "char.json arrange complete!"
+fs.writeFileSync "./src/raw/char.json", outChar

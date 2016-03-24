@@ -20,5 +20,4 @@ AppAction =
 			sortValue: sortValue
 			)
 
-
 module.exports = AppAction

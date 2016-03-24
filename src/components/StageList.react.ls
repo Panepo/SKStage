@@ -6,7 +6,7 @@ require! {
 	"./StageList.css"
 }
 
-{div, button, table, thead, tr, th, tbody, td, label, input} = React.DOM
+{div, button, table, thead, tr, th, tbody, td, label, input, a} = React.DOM
 
 StageList = React.createClass do
 	displayName: "StageList"
@@ -16,6 +16,9 @@ StageList = React.createClass do
 		output: ReactPropTypes.array.isRequired
 		display: ReactPropTypes.bool.isRequired
 		day: ReactPropTypes.number.isRequired
+	
+	componentDidUpdate: !->
+		componentHandler.upgradeDom()
 	
 	handleChange: (event) !->
 		trId = event.target.id + "tr"

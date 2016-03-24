@@ -16,3 +16,12 @@
 	border-color: #66ff66;
 	border-radius: 2px;
 }
+
+.menu-bonus-text {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.menu-bonus-image {
+	padding-left: 15px;
+}
