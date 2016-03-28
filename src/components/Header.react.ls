@@ -1,7 +1,7 @@
 require! {
 	"react": React
 	"../constants/constants.ls": Constants
-	"./Header.css"
+	"../css/Header.css"
 }
 
 {div, span, nav, a} = React.DOM
@@ -17,7 +17,8 @@ Header = React.createClass do
 					div className: "mdl-layout-spacer", null
 					nav className: "mdl-navigation",
 						a className: Constants.buttonClassActive, href: "http://wikiwiki.jp/seimani/", "Wiki"
-						a className: Constants.buttonClassActive, href: "./img/gift.jpg", "贈り物"
+						a className: Constants.buttonClassActive, href: "./img/char.jpg", "EXPボーナス日程表"
+						a className: Constants.buttonClassActive, href: "./img/gift.jpg", "贈り物表"
 				div className: "demo-ribbon", null
 
 module.exports = Header

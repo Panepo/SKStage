@@ -3,7 +3,7 @@ require! {
 	"react": { PropTypes: ReactPropTypes }
 	"../constants/constants.ls": Constants
 	"../actions/AppAction.ls": AppAction
-	"./StageList.css"
+	"../css/StageList.css"
 }
 
 {div, button, table, thead, tr, th, tbody, td, label, input, a} = React.DOM

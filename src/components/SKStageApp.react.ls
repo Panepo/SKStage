@@ -6,7 +6,7 @@ require! {
 	"./Navigation.react.ls": Navigation
 	"../stores/AppStore.ls": AppStore
 	"../actions/AppAction.ls": AppAction
-	"./SKStageApp.css"
+	"../css/SKStageApp.css"
 }
 
 {div, table, thead, tbody, th, tr, td, label, input, main } = React.DOM

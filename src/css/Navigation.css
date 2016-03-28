@@ -23,15 +23,30 @@
 	margin-top: 2px;
 	border-style: solid;
 	border-width: 2px;
-	border-color: #66ff66;
+	border-color: #cc99ff;
 	border-radius: 2px;
 }
 
-.menu-bonus-text {
+.floating-menu2 .menu-bonus {
+	width: 130px;
+	margin-top: 2px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #cc99ff;
+	border-radius: 2px;
+}
+
+.menu-bonus {
 	text-align: center;
 	margin-top: 10px;
 }
 
-.menu-bonus-image {
-	padding-left: 15px;
+.menu-bonus-text {
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
+
+.menu-bonus-image {
+	margin-bottom: 5px;
+}
+

@@ -2,7 +2,7 @@ require! {
 	"react": React
 }
 
-{div, a} = React.DOM
+{div, a, small} = React.DOM
 
 Footer = React.createClass do
 	displayName: "Footer"
@@ -11,12 +11,15 @@ Footer = React.createClass do
 		div className: "demo-footer mdl-mini-footer",
 			div className: "mdl-mini-footer--left-section",
 				div null,
-					"『"
-					a href: "http://www.dmm.com/netgame_s/seiken/", "政剣マニフェスティア"
-					"』(C) DMMゲームズ"
+					small null,
+						"『"
+						a href: "http://www.dmm.com/netgame_s/seiken/", "政剣マニフェスティア"
+						"』(C) DMMゲームズ"
 				div null,
-					"「政剣マニフェスティア」から転載された全てのコンテンツの著作権につきましては、権利者様へ帰属します。"
+					small null,
+						"「政剣マニフェスティア」から転載された全てのコンテンツの著作権につきましては、権利者様へ帰属します。"
 				div null,
-					"Copyright (C) Panepo@Github 2016 All Rights Reserved."
+					small null,
+						"Copyright (C) Panepo@Github 2016 All Rights Reserved."
 
 module.exports = Footer
