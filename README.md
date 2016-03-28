@@ -1,4 +1,4 @@
-# [SeimaniExp]( http://panepo.github.io/SeimaniExp )
+# [SeimaniExp]( http://panepo.github.io/SeimaniExp/ )
 
 Seiken manifestia exp training guild
 
