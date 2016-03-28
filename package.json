@@ -1,15 +1,15 @@
 {
-  "name": "sk-stage",
+  "name": "seimani-exp",
   "version": "1.0.0",
-  "description": "Seiken stage reward calculator",
+  "description": "Seiken manifestia guild for exp",
   "main": "app.ls",
   "author": "Panepo <panepo@github.io>",
   "repository": "https://github.com/Panepo/SKStage.git",
   "license": "MIT",
   "scripts": {
     "start": "lsc server.ls --nodejs --harmoy",
-		"build": "webpack --config webpack.config.ls",
-		"parser": "lsc  ./src/raw/parser.ls --nodejs --harmoy"
+    "build": "webpack --config webpack.config.ls",
+    "parser": "lsc  ./src/raw/parser.ls --nodejs --harmoy"
   },
   "dependencies": {
     "flux": "^2.1.1",
@@ -25,6 +25,7 @@
     "babel-plugin-react-transform": "^1.1.0",
     "css-loader": "^0.23.1",
     "express": "^4.13.3",
+    "file-loader": "^0.8.5",
     "json-loader": "^0.5.4",
     "livescript": "^1.4.0",
     "livescript-loader": "^0.1.5",
@@ -33,6 +34,7 @@
     "react-transform-hmr": "^1.0.1",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
     "webpack": "^1.12.11",
     "webpack-dev-middleware": "^1.4.0",
     "webpack-hot-middleware": "^2.6.0"

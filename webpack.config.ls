@@ -40,6 +40,11 @@ module.exports = {
 				loaders: [ 'style', 'css', 'sass' ]
 				include: path.join(__dirname, 'src')
 			}
+			{
+				test: /\.(png|jpg)$/
+				loaders: [ 'url-loader?limit=8192' ]
+				include: path.join(__dirname, 'src')
+			}
 		]
 	}
 	node: {

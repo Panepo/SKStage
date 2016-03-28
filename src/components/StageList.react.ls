@@ -4,9 +4,13 @@ require! {
 	"../constants/constants.ls": Constants
 	"../actions/AppAction.ls": AppAction
 	"../css/StageList.css"
+	"../image/w1claymore.png": w1
+	"../image/w2bow.png": w2
+	"../image/w3staff.png": w3
+	"../image/w4hammer.png": w4
 }
 
-{div, button, table, thead, tr, th, tbody, td, label, input, a} = React.DOM
+{div, button, table, thead, tr, th, tbody, td, label, input, a, img} = React.DOM
 
 StageList = React.createClass do
 	displayName: "StageList"
@@ -47,7 +51,18 @@ StageList = React.createClass do
 											label className: "mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-data-table__select", htmlFor: @props.id+"check"+i.toString(),
 												input type: "checkbox" id:@props.id+"check"+i.toString(), className: "mdl-checkbox__input", onChange: @handleChange, null
 										else
-											if list is "exp"
+											if list is "type"
+												if out["type"] is '近接'
+													img src: w1, height: "25", width: "25", null
+												else if out["type"] is '射撃'
+													img src: w2, height: "25", width: "25", null
+												else if out["type"] is '魔法'
+													img src: w3, height: "25", width: "25", null
+												else if out["type"] is '重装'
+													img src: w4, height: "25", width: "25", null
+												else
+													out[list]
+											else if list is "exp"
 												if out[@props.day] is "1"
 													label className:"expBonus", out["exp12"]
 												else
