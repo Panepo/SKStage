@@ -19,9 +19,9 @@ Navigation = React.createClass do
 		toggleAll: false
 	}
 	
-	handleToggle: (event) !->
+	handleToggle: (number) !->
 		toggle = @props.toggle
-		toggleNumber = parseInt event.target.id.slice(8)
+		toggleNumber = number
 		if toggle[toggleNumber] is 1
 			toggle[toggleNumber] = 0
 		else
@@ -54,9 +54,9 @@ Navigation = React.createClass do
 					for type, i in Constants.listStage
 						div key: "checkbox" + i.toString!,
 							if @props.toggle[i] is 1
-								button id: "checkbox" + i.toString!, className: Constants.buttonClassActive, onClick: @handleToggle, type
+								button className: Constants.buttonClassActive, onClick: @handleToggle.bind(null, i), type
 							else
-								button id: "checkbox" + i.toString!, className: Constants.buttonClassInactive, onClick: @handleToggle, type
+								button className: Constants.buttonClassInactive, onClick: @handleToggle.bind(null, i), type
 			nav className: "floating-menu2 mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col",
 				if @props.bonus[0].length !== 0
 					div className: "menu-bonus",

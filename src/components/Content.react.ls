@@ -18,8 +18,8 @@ Content = React.createClass do
 		day: ReactPropTypes.number.isRequired
 		output: ReactPropTypes.array.isRequired
 
-	handleDayChange: (event) !->
-		AppAction.dayChange parseInt event.target.id
+	handleDayChange: (day) !->
+		AppAction.dayChange day
 
 	render: ->
 		div className: "content",
@@ -29,9 +29,9 @@ Content = React.createClass do
 				div className: "mdl-tabs__tab-bar",
 					for list, i in Constants.listTab
 						if @props.day is i
-							button className: Constants.buttonClassActive, key:i, id:i, onClick: @handleDayChange, list
+							button className: Constants.buttonClassActive, key:i, onClick: @handleDayChange.bind(null, i), list
 						else
-							button className: Constants.buttonClassInactive, key:i, id:i, onClick: @handleDayChange, list
+							button className: Constants.buttonClassInactive, key:i, onClick: @handleDayChange.bind(null, i), list
 				for toggle, i in @props.toggle
 					if toggle is 1
 						StageList {
