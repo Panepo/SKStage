@@ -42,7 +42,7 @@ module.exports = {
 			}
 			{
 				test: /\.(png|jpg)$/
-				loaders: [ 'url-loader?limit=8192' ]
+				loaders: [ 'url-loader' ]
 				include: path.join(__dirname, 'src')
 			}
 		]

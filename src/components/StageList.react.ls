@@ -34,6 +34,43 @@ StageList = React.createClass do
 	handleSort: (event) !->
 		AppAction.sortChange event.target.id
 
+	displayContent: (out, list) ->
+		switch list
+		case "type"
+			switch out["type"]
+			case '近接'
+				img src: w1, height: "25", width: "25", null
+			case '射撃'
+				img src: w2, height: "25", width: "25", null
+			case '魔法'
+				img src: w3, height: "25", width: "25", null
+			case '重装'
+				img src: w4, height: "25", width: "25", null
+			default
+				out[list]
+		case "exp"
+			if out[@props.day] is "1"
+				label className:"expBonus", out["exp12"]
+			else
+				out[list]
+		case "expM"
+			if out[@props.day] is "1"
+				label className:"expBonus", out["exp12M"]
+			else
+				out[list]
+		case "gold"
+			if out[@props.day] is "2"
+				label className:"goldBonus", out["gold12"]
+			else
+				out[list]
+		case "goldM"
+			if out[@props.day] is "2"
+				label className:"goldBonus", out["gold12M"]
+			else
+				out[list]
+		default
+			out[list]
+
 	render: ->
 		div null,
 			if @props.display is true
@@ -51,38 +88,6 @@ StageList = React.createClass do
 											label className: "mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-data-table__select", htmlFor: @props.id+"check"+i.toString(),
 												input type: "checkbox" id:@props.id+"check"+i.toString(), className: "mdl-checkbox__input", onChange: @handleChange, null
 										else
-											if list is "type"
-												if out["type"] is '近接'
-													img src: w1, height: "25", width: "25", null
-												else if out["type"] is '射撃'
-													img src: w2, height: "25", width: "25", null
-												else if out["type"] is '魔法'
-													img src: w3, height: "25", width: "25", null
-												else if out["type"] is '重装'
-													img src: w4, height: "25", width: "25", null
-												else
-													out[list]
-											else if list is "exp"
-												if out[@props.day] is "1"
-													label className:"expBonus", out["exp12"]
-												else
-													out[list]
-											else if list is "expM"
-												if out[@props.day] is "1"
-													label className:"expBonus", out["exp12M"]
-												else
-													out[list]
-											else if list is "gold"
-												if out[@props.day] is "2"
-													label className:"goldBonus", out["gold12"]
-												else
-													out[list]
-											else if list is "goldM"
-												if out[@props.day] is "2"
-													label className:"goldBonus", out["gold12M"]
-												else
-													out[list]
-											else
-												out[list]
+											@displayContent(out, list)
 
 module.exports = StageList
