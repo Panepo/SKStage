@@ -26,11 +26,11 @@ Header = React.createClass do
 			div className: "modal", id: "modal1",
 				button className: "close mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored",  onClick: @handleClose.bind(null, "modal1"),
 					i className: "material-icons", "clear"
-				img className: "modal-content", src: imageGift, null
+				img className: "modal-content", src: imageChar, null
 			div className: "modal", id: "modal2",
 				button className: "close mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored",  onClick: @handleClose.bind(null, "modal2"),
 					i className: "material-icons", "clear"
-				img className: "modal-content", src: imageChar, null
+				img className: "modal-content", src: imageGift, null
 			header className: "demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800 mdl-shadow--4dp",
 				div className: "mdl-layout__header-row",
 					span className: "mdl-layout-title", null
