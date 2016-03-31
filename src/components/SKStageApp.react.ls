@@ -42,7 +42,8 @@ SKStageApp = React.createClass do
 					toggle:@state.data.toggle
 					bonus:@state.data.bonus
 				}, null
-				div className: "demo-main mdl-layout__content",
+				div className: "demo-ribbon mdl-shadow--4dp", null
+				main className: "demo-main mdl-layout__content",
 					div className: "demo-container mdl-grid",
 						div className: "mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone", null
 						div className: "demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col",

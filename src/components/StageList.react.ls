@@ -72,7 +72,7 @@ StageList = React.createClass do
 			out[list]
 
 	render: ->
-		div null,
+		div className: "StageList",
 			if @props.display is true
 				table className: Constants.TableClass,
 					thead null,

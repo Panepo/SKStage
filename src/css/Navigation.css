@@ -3,8 +3,7 @@
 	padding: 20px;
 	width: 170px;
 	margin-left: 50px;
-	margin-top: -52vh;
-	z-index: 100;
+	margin-top: 7vh;
 	position: fixed;
 }
 
@@ -13,8 +12,7 @@
 	padding: 20px;
 	width: 170px;
 	margin-left: calc(100% - 237px);
-	margin-top: -52vh;
-	z-index: 100;
+	margin-top: 7vh;
 	position: fixed;
 }
 
@@ -50,3 +48,12 @@
 	margin-bottom: 5px;
 }
 
+@media only screen and (max-width: 1200px){
+	.floating-menu {
+		display: none;
+	}
+	
+	.floating-menu2 {
+		display: none;
+	}
+}

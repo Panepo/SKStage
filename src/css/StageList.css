@@ -10,6 +10,12 @@
 	text-decoration: underline;
 }
 
-.mdl-data-table {
+.StageList .mdl-data-table {
 	width: 100%
+}
+
+@media only screen and (max-width: 1200px){
+	.StageList .mdl-checkbox {
+		display: none;
+	}
 }
