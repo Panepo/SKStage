@@ -3,7 +3,6 @@ require! {
 	"./Header.react.ls": Header
 	"./Footer.react.ls": Footer
 	"./Content.react.ls": Content
-	"./Navigation.react.ls": Navigation
 	"../stores/AppStore.ls": AppStore
 	"../actions/AppAction.ls": AppAction
 	"../css/SKStageApp.css"
@@ -14,7 +13,6 @@ require! {
 Header = React.createFactory Header
 Footer = React.createFactory Footer
 Content = React.createFactory Content
-Navigation = React.createFactory Navigation
 
 SKStageApp = React.createClass do
 	displayName: "SKStageApp"
@@ -37,8 +35,7 @@ SKStageApp = React.createClass do
 	render: ->
 		div null,
 			div className: "demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100",
-				Header null
-				Navigation {
+				Header {
 					toggle:@state.data.toggle
 					bonus:@state.data.bonus
 				}, null
