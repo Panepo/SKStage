@@ -7,7 +7,7 @@ require! {
 	"../image/w1claymore.png": w1
 	"../image/w2bow.png": w2
 	"../image/w3staff.png": w3
-	"../image/w4hammer.png": w4
+	"../image/w4axe.png": w4
 }
 
 {div, button, table, thead, tr, th, tbody, td, label, input, a, img} = React.DOM
@@ -22,7 +22,7 @@ StageList = React.createClass do
 		day: ReactPropTypes.number.isRequired
 	
 	componentDidUpdate: !->
-		componentHandler.upgradeDom()
+		componentHandler.upgradeDom!
 	
 	handleChange: (event) !->
 		trId = event.target.id + "tr"
@@ -78,15 +78,15 @@ StageList = React.createClass do
 					thead null,
 						tr null,
 							for list, i in Constants.listThead
-								th id: Constants.TbodyClass[i], key:"thead" + i.toString(), onClick: @handleSort, list
+								th id: Constants.TbodyClass[i], key:"thead" + i.toString!, onClick: @handleSort, list
 					tbody null,
 						for out, i in @props.output
-							tr key:"check"+i.toString()+"tr" id: @props.id+"check"+i.toString()+"tr",
+							tr key:"check"+i.toString!+"tr" id: @props.id+"check"+i.toString!+"tr",
 								for list, j in Constants.TbodyClass
-									td className: Constants.TbodyClass[j], key:"tbody"+i.toString()+j.toString(),
+									td className: Constants.TbodyClass[j], key:"tbody"+i.toString!+j.toString!,
 										if j is 0
-											label className: "mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-data-table__select", htmlFor: @props.id+"check"+i.toString(),
-												input type: "checkbox" id:@props.id+"check"+i.toString(), className: "mdl-checkbox__input", onChange: @handleChange, null
+											label className: "mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-data-table__select", htmlFor: @props.id+"check"+i.toString!,
+												input type: "checkbox" id:@props.id+"check"+i.toString!, className: "mdl-checkbox__input", onChange: @handleChange, null
 										else
 											@displayContent(out, list)
 
