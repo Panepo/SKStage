@@ -1,21 +1,14 @@
 require! {
 	"react": React
 	"react": { PropTypes: ReactPropTypes }
-	"./Navigation.react.ls": Navigation
 	"../constants/constants.ls": Constants
 	"../css/Header.css"
 }
 
 {div, span, nav, a, header, button, img, i} = React.DOM
 
-Navigation = React.createFactory Navigation
-
 Header = React.createClass do
 	displayName: "Header"
-	
-	propTypes:
-		toggle: ReactPropTypes.array.isRequired
-		bonus: ReactPropTypes.array.isRequired
 	
 	getInitialState: -> {
 		modal1Display: false
@@ -55,9 +48,5 @@ Header = React.createClass do
 					a className: Constants.buttonClassActive, href: "http://wikiwiki.jp/seimani/", "Wiki"
 					button className: Constants.buttonClassActive, onClick: @handleClick.bind(null, "modal1"), "EXPボーナス日程表"
 					button className: Constants.buttonClassActive, onClick: @handleClick.bind(null, "modal2"), "贈り物表"
-			Navigation {
-				toggle:@props.toggle
-				bonus:@props.bonus
-			}, null
 
 module.exports = Header

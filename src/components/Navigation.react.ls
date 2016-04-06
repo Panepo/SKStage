@@ -44,8 +44,8 @@ Navigation = React.createClass do
 		AppAction.toggleChange toggle
 
 	render: ->
-		div null,
-			nav className: "floating-menu mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col",
+		nav null,
+			div className: "floating-menu mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col",
 				div className: "menu-button",
 					if @state.toggleAll is true
 						button className: Constants.buttonClassActive, onClick: @handleToggleAll, "全選"
@@ -57,7 +57,7 @@ Navigation = React.createClass do
 								button className: Constants.buttonClassActive, onClick: @handleToggle.bind(null, i), type
 							else
 								button className: Constants.buttonClassInactive, onClick: @handleToggle.bind(null, i), type
-			nav className: "floating-menu2 mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col",
+			div className: "floating-menu2 mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col",
 				if @props.bonus[0].length !== 0
 					div className: "menu-bonus",
 						div className: "menu-bonus-text", '今日EXP 2倍'
