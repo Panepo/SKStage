@@ -22,7 +22,7 @@ StageList = React.createClass do
 		day: ReactPropTypes.number.isRequired
 	
 	componentDidUpdate: !->
-		componentHandler.upgradeDom!
+		componentHandler.upgradeDom()
 	
 	handleChange: (event) !->
 		trId = event.target.id + "tr"
