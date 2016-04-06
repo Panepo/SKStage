@@ -7,7 +7,7 @@ require! {
 	"../image/w1claymore.png": w1
 	"../image/w2bow.png": w2
 	"../image/w3staff.png": w3
-	"../image/w4axe.png": w4
+	"../image/w4hammer.png": w4
 }
 
 {div, button, table, thead, tr, th, tbody, td, label, input, a, img} = React.DOM
