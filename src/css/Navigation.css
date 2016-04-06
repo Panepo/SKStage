@@ -5,6 +5,7 @@
 	margin-left: 50px;
 	margin-top: 7vh;
 	position: fixed;
+	z-index: 10;
 }
 
 .floating-menu2 {
@@ -14,6 +15,7 @@
 	margin-left: calc(100% - 237px);
 	margin-top: 7vh;
 	position: fixed;
+	z-index: 10;
 }
 
 .floating-menu .mdl-button {
