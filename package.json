@@ -11,7 +11,7 @@
     "build": "webpack --config webpack.config.ls",
     "parser": "lsc  ./src/raw/parser.ls --nodejs --harmoy",
 		"startrx": "lsc server.redux.ls --nodejs --harmoy",
-    "buildrx": "webpack --config webpack.redux.config.ls"
+    "buildrx": "webpack --config webpack.redux.config"
   },
   "dependencies": {
     "babel-polyfill": "^6.7.4",

@@ -6,7 +6,7 @@ require! {
 	"../css/Header.css"
 }
 
-{div, span, nav, a, header, button, img, i} = React.DOM
+{div, span, nav, a, header, button, img} = React.DOM
 
 Navigation = React.createFactory Navigation
 
@@ -41,12 +41,12 @@ Header = React.createClass do
 			if @state.modal1Display is true
 				div className: "modal", id: "modal1",
 					button className: "close mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect",  onClick: @handleClose.bind(null, "modal1"),
-						i className: "material-icons", "clear"
+						div className: "material-icons", "clear"
 					img className: "modal-content", src: "./img/char.jpg", null
 			if @state.modal2Display is true
 				div className: "modal", id: "modal2",
 					button className: "close mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect",  onClick: @handleClose.bind(null, "modal2"),
-						i className: "material-icons", "clear"
+						div className: "material-icons", "clear"
 					img className: "modal-content", src: "./img/gift.jpg", null
 			div className: "mdl-layout__header-row",
 				span className: "mdl-layout-title", null
