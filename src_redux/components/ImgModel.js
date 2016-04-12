@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 
-export default class ImageModel extends Component {
+export default class ImgModelDisp extends Component {
 	render() {
 		const { imgSrc, display } = this.props
 
@@ -19,7 +19,7 @@ export default class ImageModel extends Component {
 	}
 }
 
-ImageModel.propTypes = {
+ImgModelDisp.propTypes = {
 	imgSrc: PropTypes.string.isRequired,
 	display: PropTypes.bool.isRequired
 }

@@ -1,6 +1,6 @@
 import {
-	modelOpen,
-	modelClose
+	MODEL_OPEN,
+	MODEL_CLOSE
 } from '../constants/ActionTypes'
 
 const initialState = {
@@ -9,25 +9,25 @@ const initialState = {
 
 export default function imageModel(state = initialState, action) {
 	switch (action.type) {
-		case modelOpen:
-			switch (action.modalID) {
+		case MODEL_OPEN:
+			switch (action.modelId) {
 				case 'modal0':
-					return state.modalDisplay[0] = true
+					state.modalDisplay[0] = true
+					return state
 				case 'modal1':
-					return state.modalDisplay[1] = true
+					state.modalDisplay[1] = true
+					return state
 			}
-		case modelClose:
-			switch (action.modalID) {
+		case MODEL_CLOSE:
+			switch (action.modelId) {
 				case 'modal0':
-					return state.modalDisplay[0] = false
+					state.modalDisplay[0] = false
+					return state
 				case 'modal1':
-					return state.modalDisplay[1] = false
+					state.modalDisplay[1] = false
+					return state
 			}
 		default:
 			return state
 	}
-}
-
-export function getState(state) {
-	return state.modalDisplay
 }

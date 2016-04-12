@@ -1,2 +1,2 @@
-export const modelOpen = 'modelOpen'
-export const modelClose = 'modelClose'
+export const MODEL_OPEN = 'MODEL_OPEN'
+export const MODEL_CLOSE = 'MODEL_CLOSE'
