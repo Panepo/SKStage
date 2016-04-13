@@ -27,7 +27,7 @@ Content = React.createClass do
 				div className: "mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone", null
 				div className: "content demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col",
 					h4 null, "政剣マニフェスティア戦挙区効率表"
-					"更新: 2016/03/24"
+					"更新: 2016/04/13"
 					div className: "mdl-tabs mdl-js-tabs mdl-js-ripple-effect",
 						div className: "mdl-tabs__tab-bar",
 							for list, i in Constants.listTab
