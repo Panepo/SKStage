@@ -30,7 +30,7 @@ for data in CharData
 _data = {
 	day: 0
 	output: []
-	toggle: [0 0 0 1 0 0]
+	toggle: [0 0 0 0 0 1]
 	bonus: []
 }
 
