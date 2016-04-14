@@ -4,32 +4,32 @@ import {
 } from '../constants/ActionTypes'
 
 const initialState = {
-	modal0Display: false,
-	modal1Display: false
+	model0: false,
+	model1: false
 }
 
 export default function imageModel(state = initialState, action) {
 	switch (action.type) {
 		case MODEL_OPEN:
 			switch (action.modelId) {
-				case 'modal0':
+				case 'model0':
 					return Object.assign({}, state, {
-						modal0Display: true
+						model0: true
 					})
-				case 'modal1':
+				case 'model1':
 					return Object.assign({}, state, {
-						modal1Display: true
+						model1: true
 					})
 			}
 		case MODEL_CLOSE:
 			switch (action.modelId) {
-				case 'modal0':
+				case 'model0':
 					return Object.assign({}, state, {
-						modal0Display: false
+						model0: false
 					})
-				case 'modal1':
+				case 'model1':
 					return Object.assign({}, state, {
-						modal1Display: false
+						model1: false
 					})
 			}
 		default:
