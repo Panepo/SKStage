@@ -4,7 +4,8 @@ import {
 } from '../constants/ActionTypes'
 
 const initialState = {
-	modalDisplay: [false, false]
+	modal0Display: false,
+	modal1Display: false
 }
 
 export default function imageModel(state = initialState, action) {
@@ -12,20 +13,24 @@ export default function imageModel(state = initialState, action) {
 		case MODEL_OPEN:
 			switch (action.modelId) {
 				case 'modal0':
-					state.modalDisplay[0] = true
-					return state
+					return Object.assign({}, state, {
+						modal0Display: true
+					})
 				case 'modal1':
-					state.modalDisplay[1] = true
-					return state
+					return Object.assign({}, state, {
+						modal1Display: true
+					})
 			}
 		case MODEL_CLOSE:
 			switch (action.modelId) {
 				case 'modal0':
-					state.modalDisplay[0] = false
-					return state
+					return Object.assign({}, state, {
+						modal0Display: false
+					})
 				case 'modal1':
-					state.modalDisplay[1] = false
-					return state
+					return Object.assign({}, state, {
+						modal1Display: false
+					})
 			}
 		default:
 			return state

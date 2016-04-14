@@ -7,3 +7,9 @@ export function modelOpen(modelId) {
 	}
 }
 
+export function modelClose(modelId) {
+	return {
+		type: types.MODEL_CLOSE,
+		modelId
+	}
+}
