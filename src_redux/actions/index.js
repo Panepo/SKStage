@@ -20,3 +20,10 @@ export function toggleChange(toggleId) {
 		toggleId
 	}
 }
+
+export function dayChange(dayId) {
+	return {
+		type: types.DAY_CHANGE,
+		dayId
+	}
+}

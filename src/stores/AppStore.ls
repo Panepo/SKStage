@@ -67,8 +67,8 @@ stageFirstN = dbStage.chain!.find({ 'stage': 1 }).find({ 'diff': 'N' }).simpleso
 stageFirstH = dbStage.chain!.find({ 'stage': 1 }).find({ 'diff': 'H' }).simplesort('name').data!
 stageSecondN = dbStage.chain!.find({ 'stage': 2 }).find({ 'diff': 'N' }).simplesort('name').data!
 stageSecondH = dbStage.chain!.find({ 'stage': 2 }).find({ 'diff': 'H' }).simplesort('name').data!
-stageThirdN = dbStage.chain!.find({ 'stage': 3 }).find({ 'diff': 'N' })simplesort('name').data!
-stageThirdH = dbStage.chain!.find({ 'stage': 3 }).find({ 'diff': 'H' })simplesort('name').data!
+stageThirdN = dbStage.chain!.find({ 'stage': 3 }).find({ 'diff': 'N' }).simplesort('name').data!
+stageThirdH = dbStage.chain!.find({ 'stage': 3 }).find({ 'diff': 'H' }).simplesort('name').data!
 _data.output = [stageFirstN, stageFirstH, stageSecondN, stageSecondH, stageThirdN, stageThirdH]
 
 # ===============================================================================
@@ -85,8 +85,8 @@ sortChange = (sortValue) !->
 	stageFirstH = dbStage.chain!.find({ 'stage': 1 }).find({ 'diff': 'H' }).simplesort(sortValue).data!
 	stageSecondN = dbStage.chain!.find({ 'stage': 2 }).find({ 'diff': 'N' }).simplesort(sortValue).data!
 	stageSecondH = dbStage.chain!.find({ 'stage': 2 }).find({ 'diff': 'H' }).simplesort(sortValue).data!
-	stageThirdN = dbStage.chain!.find({ 'stage': 3 }).find({ 'diff': 'N' })simplesort(sortValue).data!
-	stageThirdH = dbStage.chain!.find({ 'stage': 3 }).find({ 'diff': 'H' })simplesort(sortValue).data!
+	stageThirdN = dbStage.chain!.find({ 'stage': 3 }).find({ 'diff': 'N' }).simplesort(sortValue).data!
+	stageThirdH = dbStage.chain!.find({ 'stage': 3 }).find({ 'diff': 'H' }).simplesort(sortValue).data!
 	_data.output = [stageFirstN, stageFirstH, stageSecondN, stageSecondH, stageThirdN, stageThirdH]
 
 # ===============================================================================

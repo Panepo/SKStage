@@ -14,7 +14,7 @@ export default class NavButton extends Component {
 		
 		return (
 			<div>
-				<button className={bClassName} onClick={onClickFunc.bind(null, modelId)} >{title}</button>
+				<button className={bClassName} onClick={onClickFunc.bind(null, modelId)}>{title}</button>
 			</div>
 		)
 	}

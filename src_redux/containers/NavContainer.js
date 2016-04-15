@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { toggleChange } from '../actions'
-import NavButton from '../components/NavButton'
+import ToggleButton from '../components/ToggleButton'
 import { listStage, listStageS } from '../constants/ConstantList'
 import '../css/Navigation.css'
 
@@ -12,13 +12,12 @@ class NavContainer extends Component {
 		var buttonTemp
 		var buttonOut = []
 		for (var i=0; i<listStage.length; i++){
-			var keyString = "button" + i.toString()
 			buttonTemp = (
-				<NavButton
-					key={keyString}
+				<ToggleButton
+					key={"navButton" + i.toString()}
 					modelId={listStageS[i]}
 					display={toggle[listStageS[i]]}
-					onClickFunc={ (modelId) => toggleChange(modelId)}
+					onClickFunc={(modelId) => toggleChange(modelId)}
 					title={listStage[i]} />
 			)
 			buttonOut.push(buttonTemp)
