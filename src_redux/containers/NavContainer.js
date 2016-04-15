@@ -1,23 +1,24 @@
 import React, { Component, PropTypes } from 'react'
-import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import { toggleChange } from '../actions'
 import NavButton from '../components/NavButton'
 import { listStage, listStageS } from '../constants/ConstantList'
 import '../css/Navigation.css'
 
 class NavContainer extends Component {
 	render() {
-		const { toggle } = this.props
+		const { toggle, toggleChange } = this.props
 		
 		var buttonTemp
 		var buttonOut = []
-		var keyString = ""
 		for (var i=0; i<listStage.length; i++){
-			keyString = "button" + i.toString()
+			var keyString = "button" + i.toString()
 			buttonTemp = (
 				<NavButton
 					key={keyString}
+					modelId={listStageS[i]}
 					display={toggle[listStageS[i]]}
+					onClickFunc={ (modelId) => toggleChange(modelId)}
 					title={listStage[i]} />
 			)
 			buttonOut.push(buttonTemp)
@@ -34,7 +35,8 @@ class NavContainer extends Component {
 }
 
 NavContainer.propTypes = {
-	toggle: PropTypes.object.isRequired
+	toggle: PropTypes.object.isRequired,
+	toggleChange: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {
@@ -43,13 +45,7 @@ const mapStateToProps = (state) => {
 	}
 }
 
-const mapDispatchToProps = (dispatch) => {
-	return {
-		
-	}
-}
-
 export default connect(
 	mapStateToProps,
-	mapDispatchToProps
+	{ toggleChange }
 )(NavContainer)

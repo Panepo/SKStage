@@ -13,3 +13,10 @@ export function modelClose(modelId) {
 		modelId
 	}
 }
+
+export function toggleChange(toggleId) {
+	return {
+		type: types.TOGGLE_CHANGE,
+		toggleId
+	}
+}

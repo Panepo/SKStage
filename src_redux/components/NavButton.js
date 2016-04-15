@@ -3,7 +3,7 @@ import { CbuttonActive, CbuttonInactive } from '../constants/ClassName'
 
 export default class NavButton extends Component {
 	render() {
-		const { display, title } = this.props
+		const { display, title, onClickFunc, modelId } = this.props
 		
 		var bClassName = ""
 		if ( display == true ) {
@@ -14,7 +14,7 @@ export default class NavButton extends Component {
 		
 		return (
 			<div>
-				<button className={bClassName}>{title}</button>
+				<button className={bClassName} onClick={onClickFunc.bind(null, modelId)} >{title}</button>
 			</div>
 		)
 	}
@@ -22,5 +22,7 @@ export default class NavButton extends Component {
 
 NavButton.propTypes = {
 	display: PropTypes.bool,
-	title: PropTypes.string
+	title: PropTypes.string,
+	onClickFunc: PropTypes.func,
+	modelId: PropTypes.string
 }
