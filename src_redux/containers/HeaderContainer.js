@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { modelOpen, modelClose } from '../actions'
 import NavContainer from './NavContainer'
+import CharContainer from './CharContainer'
 import ImgModel from '../components/ImgModel'
 import { CbuttonActive } from '../constants/ClassName'
 import '../css/Header.css'
@@ -35,6 +36,7 @@ class HeaderContainer extends Component {
 					</nav>
 				</div>
 				<NavContainer />
+				<CharContainer />
 			</header>
 		)
 	}
