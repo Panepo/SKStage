@@ -2,6 +2,8 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import StageList from '../components/StageList'
 import { listStage, listStageS } from '../constants/ConstantList'
+import '../css/StageList.css'
+
 
 class StageContainer extends Component {
 	render() {
@@ -15,7 +17,7 @@ class StageContainer extends Component {
 					key={"stage" + i.toString()}
 					id={"stage" + i.toString()}
 					display={toggle[listStageS[i]]}
-					day={day}
+					day={day.day}
 					output={stageData[listStageS[i]]} />
 			)
 			stageOut.push(stageTemp)
