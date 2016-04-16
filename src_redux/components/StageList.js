@@ -1,13 +1,16 @@
 import React, { Component, PropTypes } from 'react'
 import { listThead } from '../constants/ConstantList'
 import { Ctable, Ctbody } from '../constants/ClassName'
-
 import w1 from '../image/w1claymore.png'
 import w2 from '../image/w2bow.png'
 import w3 from '../image/w3staff.png'
 import w4 from '../image/w4axe.png'
 
 export default class StageList extends Component {
+	componentDidUpdate() {
+		componentHandler.upgradeDom()
+	}
+	
 	handleChange(event) {
 		var trId = event.target.id + "tr"
 		if ( event.target.checked ) {
@@ -17,6 +20,9 @@ export default class StageList extends Component {
 		}
 	}
 	
+	// ==================================================================
+	// generate table data
+	// ==================================================================
 	handleData(id, out, i, j, list, day) {
 		if ( j == 0 ) {
 			return (
@@ -93,7 +99,6 @@ export default class StageList extends Component {
 		// ==================================================================
 		// generate table body
 		// ==================================================================
-		
 		var tbodyOut
 		var tbodyTemp
 		var tbodyTempOut = []
