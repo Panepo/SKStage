@@ -73,7 +73,6 @@ export default class StageList extends Component {
 	
 	render() {
 		const { id, display, day, output } = this.props
-		
 		// ==================================================================
 		// generate table head
 		// ==================================================================
