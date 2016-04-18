@@ -7,7 +7,7 @@ module.exports = {
 	devtool: "sourcemap"
 	entry: [
 		#'webpack-hot-middleware/client'
-		"./src/app.ls"
+		"./src_flux/app.ls"
 	]
 	output: {
 		path: path.join(__dirname, 'build')
@@ -23,12 +23,12 @@ module.exports = {
 			{
 				test: /\.js$/
 				loaders: [ "react-hot", "babel" ]
-				include: path.join(__dirname, 'src')
+				include: path.join(__dirname, 'src_flux')
 			}
 			{
 				test: /\.ls$/
 				loaders: [ "react-hot", "livescript" ]
-				include: path.join(__dirname, 'src')
+				include: path.join(__dirname, 'src_flux')
 			}
 			{
 				test: /\.json/
@@ -38,12 +38,12 @@ module.exports = {
 			{
 				test: /\.(css|scss)$/
 				loaders: [ 'style', 'css', 'sass' ]
-				include: path.join(__dirname, 'src')
+				include: path.join(__dirname, 'src_flux')
 			}
 			{
 				test: /\.(png|jpg)$/
 				loaders: [ 'url-loader' ]
-				include: path.join(__dirname, 'src')
+				include: path.join(__dirname, 'src_flux')
 			}
 		]
 	}

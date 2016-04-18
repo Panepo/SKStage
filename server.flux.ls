@@ -2,7 +2,7 @@ require! {
 	"webpack": webpack
 	"webpack-dev-middleware": webpackDevMiddleware
 	"webpack-hot-middleware": webpackHotMiddleware
-	"./webpack.config.ls": config
+	"./webpack.flux.config.ls": config
 }
 
 app = new (require('express'))()
