@@ -27,3 +27,10 @@ export function dayChange(dayId) {
 		dayId
 	}
 }
+
+export function sortChange(sortId) {
+	return {
+		type: types.SORT_CHANGE,
+		sortId
+	}
+}

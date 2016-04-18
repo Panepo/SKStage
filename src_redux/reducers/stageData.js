@@ -1,5 +1,5 @@
 import {
-	
+	SORT_CHANGE
 } from '../constants/ActionTypes'
 
 import lokijs from 'lokijs'
@@ -12,24 +12,27 @@ for (var i=0; i<StageData.length; i++) {
 	dbStage.insert(StageData[i])
 }
 
-var stageFirstN = dbStage.chain().find({ 'stage': 1 }).find({ 'diff': 'N' }).simplesort('name').data()
-var stageFirstH = dbStage.chain().find({ 'stage': 1 }).find({ 'diff': 'H' }).simplesort('name').data()
-var stageSecondN = dbStage.chain().find({ 'stage': 2 }).find({ 'diff': 'N' }).simplesort('name').data()
-var stageSecondH = dbStage.chain().find({ 'stage': 2 }).find({ 'diff': 'H' }).simplesort('name').data()
-var stageThirdN = dbStage.chain().find({ 'stage': 3 }).find({ 'diff': 'N' }).simplesort('name').data()
-var stageThirdH = dbStage.chain().find({ 'stage': 3 }).find({ 'diff': 'H' }).simplesort('name').data()
-
 const initialState = {
-	s1normal: stageFirstN,
-	s1hard: stageFirstH,
-	s2normal: stageSecondN,
-	s2hard: stageSecondH,
-	s3normal: stageThirdN,
-	s3hard: stageThirdH
+	s1normal: dbStage.chain().find({ 'stage': 1 }).find({ 'diff': 'N' }).simplesort('name').data(),
+	s1hard: dbStage.chain().find({ 'stage': 1 }).find({ 'diff': 'H' }).simplesort('name').data(),
+	s2normal: dbStage.chain().find({ 'stage': 2 }).find({ 'diff': 'N' }).simplesort('name').data(),
+	s2hard: dbStage.chain().find({ 'stage': 2 }).find({ 'diff': 'H' }).simplesort('name').data(),
+	s3normal: dbStage.chain().find({ 'stage': 3 }).find({ 'diff': 'N' }).simplesort('name').data(),
+	s3hard: dbStage.chain().find({ 'stage': 3 }).find({ 'diff': 'H' }).simplesort('name').data()
 }
 
 export default function stageData(state = initialState, action) {
 	switch (action.type) {
+		case SORT_CHANGE: {
+			return Object.assign({}, state, {
+				s1normal: dbStage.chain().find({ 'stage': 1 }).find({ 'diff': 'N' }).simplesort(action.sortId).data(),
+				s1hard: dbStage.chain().find({ 'stage': 1 }).find({ 'diff': 'H' }).simplesort(action.sortId).data(),
+				s2normal: dbStage.chain().find({ 'stage': 2 }).find({ 'diff': 'N' }).simplesort(action.sortId).data(),
+				s2hard: dbStage.chain().find({ 'stage': 2 }).find({ 'diff': 'H' }).simplesort(action.sortId).data(),
+				s3normal: dbStage.chain().find({ 'stage': 3 }).find({ 'diff': 'N' }).simplesort(action.sortId).data(),
+				s3hard: dbStage.chain().find({ 'stage': 3 }).find({ 'diff': 'H' }).simplesort(action.sortId).data()
+			})
+		}
 		default:
 			return state
 	}

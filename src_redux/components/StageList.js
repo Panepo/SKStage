@@ -72,7 +72,7 @@ export default class StageList extends Component {
 	}
 	
 	render() {
-		const { id, display, day, output } = this.props
+		const { id, display, day, output, sortFunc } = this.props
 		// ==================================================================
 		// generate table head
 		// ==================================================================
@@ -81,7 +81,7 @@ export default class StageList extends Component {
 		var theadTempOut = []
 		for (var i=0; i<listThead.length; i++){
 			theadTemp = (
-				<th id={Ctbody[i]} key={"thead"+i.toString()}>
+				<th id={Ctbody[i]} key={"thead"+i.toString()} onClick={sortFunc.bind(null, Ctbody[i])} >
 					{listThead[i]}
 				</th>
 			)
@@ -143,5 +143,6 @@ StageList.propTypes = {
 	id: PropTypes.string,
 	display: PropTypes.bool,
 	day: PropTypes.number,
-	output: PropTypes.array
+	output: PropTypes.array,
+	sortFunc: PropTypes.func
 }

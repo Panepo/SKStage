@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import { sortChange } from '../actions'
 import StageList from '../components/StageList'
 import { listStage, listStageS } from '../constants/ConstantList'
 import '../css/StageList.css'
@@ -7,7 +8,7 @@ import '../css/StageList.css'
 
 class StageContainer extends Component {
 	render() {
-		const { toggle, day, stageData } = this.props
+		const { toggle, day, stageData, sortChange } = this.props
 		
 		var stageTemp
 		var stageOut = []
@@ -18,6 +19,7 @@ class StageContainer extends Component {
 					id={"stage" + i.toString()}
 					display={toggle[listStageS[i]]}
 					day={day.day}
+					sortFunc={(sortId) => sortChange(sortId)}
 					output={stageData[listStageS[i]]} />
 			)
 			stageOut.push(stageTemp)
@@ -34,7 +36,8 @@ class StageContainer extends Component {
 StageContainer.propTypes = {
 	day: PropTypes.object.isRequired,
 	toggle: PropTypes.object.isRequired,
-	stageData: PropTypes.object.isRequired
+	stageData: PropTypes.object.isRequired,
+	sortChange: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {
@@ -46,5 +49,6 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(
-	mapStateToProps
+	mapStateToProps,
+	{ sortChange }
 )(StageContainer)
