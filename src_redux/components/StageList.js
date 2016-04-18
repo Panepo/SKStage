@@ -20,10 +20,9 @@ export default class StageList extends Component {
 		}
 	}
 	
-	// ==================================================================
-	// generate table data
-	// ==================================================================
-	handleData(id, out, i, j, list, day) {
+	generateTableData(out, i, j, list) {
+		const { id, day } = this.props
+		
 		if ( j == 0 ) {
 			return (
 				<label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-data-table__select" htmlFor={id+"check"+i.toString()} >
@@ -71,11 +70,38 @@ export default class StageList extends Component {
 		}
 	}
 	
-	render() {
-		const { id, display, day, output, sortFunc } = this.props
-		// ==================================================================
-		// generate table head
-		// ==================================================================
+	generateTableBody() {
+		const { id, day, output } = this.props
+		
+		var tbodyOut
+		var tbodyTemp
+		var tbodyTempOut = []
+		for (var i=0; i<output.length; i++) {
+			var tdTemp
+			var tdTempOut = []
+			for (var j=0; j<Ctbody.length; j++) {
+				tdTemp = (
+					<td className={Ctbody[j]} key={"tbody"+i.toString()+j.toString()} >
+						{this.generateTableData(output[i], i, j, Ctbody[j])}
+					</td>
+				)
+				tdTempOut.push(tdTemp)
+			}
+			tbodyTemp = (
+				<tr key={"check"+i.toString()+"tr"} id={id+"check"+i.toString()+"tr"}>
+					{tdTempOut}
+				</tr>
+			)
+			tbodyTempOut.push(tbodyTemp)
+		}
+		tbodyOut = <tbody>{tbodyTempOut}</tbody>
+		
+		return tbodyOut
+	}
+	
+	generateTableHead() {
+		const { sortFunc } = this.props
+		
 		var theadOut
 		var theadTemp
 		var theadTempOut = []
@@ -95,41 +121,18 @@ export default class StageList extends Component {
 			</thead>
 		)
 		
-		// ==================================================================
-		// generate table body
-		// ==================================================================
-		var tbodyOut
-		var tbodyTemp
-		var tbodyTempOut = []
-		for (var i=0; i<output.length; i++) {
-			var tdTemp
-			var tdTempOut = []
-			for (var j=0; j<Ctbody.length; j++) {
-				tdTemp = (
-					<td className={Ctbody[j]} key={"tbody"+i.toString()+j.toString()} >
-						{this.handleData(id, output[i], i, j, Ctbody[j], day)}
-					</td>
-				)
-				tdTempOut.push(tdTemp)
-			}
-			tbodyTemp = (
-				<tr key={"check"+i.toString()+"tr"} id={id+"check"+i.toString()+"tr"}>
-					{tdTempOut}
-				</tr>
-			)
-			tbodyTempOut.push(tbodyTemp)
-		}
-		tbodyOut = <tbody>{tbodyTempOut}</tbody>
-		
-		// ==================================================================
-		// render
-		// ==================================================================
+		return theadOut
+	}
+	
+	render() {
+		const { display } = this.props
+
 		if ( display == true ) {
 			return (
 				<div className="StageList">
 					<table className={Ctable}>
-						{theadOut}
-						{tbodyOut}
+						{this.generateTableHead()}
+						{this.generateTableBody()}
 					</table>
 				</div>
 			)
