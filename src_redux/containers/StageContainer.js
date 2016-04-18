@@ -5,7 +5,6 @@ import StageList from '../components/StageList'
 import { listStage, listStageS } from '../constants/ConstantList'
 import '../css/StageList.css'
 
-
 class StageContainer extends Component {
 	render() {
 		const { toggle, day, stageData, sortChange } = this.props

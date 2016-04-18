@@ -5,8 +5,8 @@ require! {
 	"../dispatcher/AppDispatcher.ls": AppDispatcher
 	"../constants/ConstActions.ls": ConstActions
 	"../constants/constants.ls": Constants
-	"../raw/data.json": StageData
-	"../raw/char.json": CharData
+	"../../raw/data.json": StageData
+	"../../raw/char.json": CharData
 }
 
 CHANGE_EVENT = 'change'

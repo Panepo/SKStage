@@ -7,11 +7,11 @@
   "repository": "https://github.com/Panepo/SKStage.git",
   "license": "MIT",
   "scripts": {
-    "start": "lsc server.ls --nodejs --harmoy",
-    "build": "webpack --config webpack.config.ls",
-    "parser": "lsc  ./src/raw/parser.ls --nodejs --harmoy",
+		"parser": "lsc  ./raw/parser.ls --nodejs --harmoy",
+    "startfx": "lsc server.flux.ls --nodejs --harmoy",
 		"startrx": "lsc server.redux.ls --nodejs --harmoy",
-    "buildrx": "webpack --config webpack.redux.config"
+		"buildfx": "webpack --config webpack.flux.config.ls",
+    "buildrx": "webpack --config webpack.redux.config.ls"
   },
   "dependencies": {
     "babel-polyfill": "^6.7.4",

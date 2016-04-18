@@ -44,7 +44,7 @@ for data, i in output
 
 output = JSON.stringify output
 console.log 'data.json arrange complete!'
-fs.writeFileSync './src/raw/data.json', output
+fs.writeFileSync './raw/data.json', output
 
 # ===============================================================================
 # PARSE CHAR DATA
@@ -60,4 +60,4 @@ for char, i in chars
 
 outChar = JSON.stringify outChar
 console.log 'char.json arrange complete!'
-fs.writeFileSync './src/raw/char.json', outChar
+fs.writeFileSync './raw/char.json', outChar

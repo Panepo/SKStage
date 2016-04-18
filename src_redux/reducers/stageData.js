@@ -3,7 +3,7 @@ import {
 } from '../constants/ActionTypes'
 
 import lokijs from 'lokijs'
-import StageData from '../raw/data.json'
+import StageData from '../../raw/data.json'
 
 var db = new lokijs('db')
 var dbStage = db.addCollection("dbStage")

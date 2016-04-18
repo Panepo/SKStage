@@ -33,7 +33,7 @@ module.exports = {
 			{
 				test: /\.json/
 				loaders: [ "json" ]
-				include: path.join(__dirname, 'src_redux')
+				include: path.join(__dirname, 'raw')
 			}
 			{
 				test: /\.(css|scss)$/

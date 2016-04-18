@@ -1,5 +1,5 @@
 import lokijs from 'lokijs'
-import CharData from '../raw/char.json'
+import CharData from '../../raw/char.json'
 
 var db = new lokijs('db')
 var dbChar = db.addCollection("dbChar")
