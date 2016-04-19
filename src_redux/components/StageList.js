@@ -125,9 +125,9 @@ export default class StageList extends Component {
 	}
 	
 	render() {
-		const { display } = this.props
+		const { display, output } = this.props
 
-		if ( display == true ) {
+		if ( display == true && output.length > 0 ) {
 			return (
 				<div className="StageList">
 					<table className={Ctable}>
