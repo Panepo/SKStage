@@ -8,6 +8,7 @@
   "license": "MIT",
   "scripts": {
 		"parser": "lsc  ./raw/parser.ls --nodejs --harmoy",
+		"setprod": "SET NODE_ENV=development",
     "startfx": "lsc server.flux.ls --nodejs --harmoy",
 		"startrx": "lsc server.redux.ls --nodejs --harmoy",
 		"buildfx": "webpack --config webpack.flux.config.ls",

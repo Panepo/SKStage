@@ -30,7 +30,7 @@ for data in CharData
 _data = {
 	day: 0
 	output: []
-	toggle: [0 0 0 0 0 1]
+	toggle: [0 0 0 0 0 0 1]
 	bonus: []
 }
 
@@ -67,9 +67,10 @@ stageFirstN = dbStage.chain!.find({ 'stage': 1 }).find({ 'diff': 'N' }).simpleso
 stageFirstH = dbStage.chain!.find({ 'stage': 1 }).find({ 'diff': 'H' }).simplesort('name').data!
 stageSecondN = dbStage.chain!.find({ 'stage': 2 }).find({ 'diff': 'N' }).simplesort('name').data!
 stageSecondH = dbStage.chain!.find({ 'stage': 2 }).find({ 'diff': 'H' }).simplesort('name').data!
+stageSecondT = dbStage.chain!.find({ 'stage': 2 }).find({ 'diff': 'T' }).simplesort('name').data!
 stageThirdN = dbStage.chain!.find({ 'stage': 3 }).find({ 'diff': 'N' }).simplesort('name').data!
 stageThirdH = dbStage.chain!.find({ 'stage': 3 }).find({ 'diff': 'H' }).simplesort('name').data!
-_data.output = [stageFirstN, stageFirstH, stageSecondN, stageSecondH, stageThirdN, stageThirdH]
+_data.output = [stageFirstN, stageFirstH, stageSecondN, stageSecondH, stageSecondT, stageThirdN, stageThirdH]
 
 # ===============================================================================
 # APPSTORE FUNCTIONS
@@ -85,9 +86,10 @@ sortChange = (sortValue) !->
 	stageFirstH = dbStage.chain!.find({ 'stage': 1 }).find({ 'diff': 'H' }).simplesort(sortValue).data!
 	stageSecondN = dbStage.chain!.find({ 'stage': 2 }).find({ 'diff': 'N' }).simplesort(sortValue).data!
 	stageSecondH = dbStage.chain!.find({ 'stage': 2 }).find({ 'diff': 'H' }).simplesort(sortValue).data!
+	stageSecondT = dbStage.chain!.find({ 'stage': 2 }).find({ 'diff': 'T' }).simplesort(sortValue).data!
 	stageThirdN = dbStage.chain!.find({ 'stage': 3 }).find({ 'diff': 'N' }).simplesort(sortValue).data!
 	stageThirdH = dbStage.chain!.find({ 'stage': 3 }).find({ 'diff': 'H' }).simplesort(sortValue).data!
-	_data.output = [stageFirstN, stageFirstH, stageSecondN, stageSecondH, stageThirdN, stageThirdH]
+	_data.output = [stageFirstN, stageFirstH, stageSecondN, stageSecondH, stageSecondT, stageThirdN, stageThirdH]
 
 # ===============================================================================
 # APPSTORE MAIN
