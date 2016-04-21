@@ -16,14 +16,17 @@ $ npm install
 
 Run simulated server
 ```
-$ npm start
+$ npm startfx
+or
+$ npm startrx
 ```
+fx for flux based architecture, and rx for redux based architecture.
 
 Or use webpack to build scripts
 ```
-$ webpack
+$ npm run buildfx
 or
-$ npm run build
+$ npm run buildrx
 ```
 
 ### Usage
