@@ -16,12 +16,14 @@ tempBonus = []
 for dataValue, i in data
 	output[i] = {}
 	for slotValue, j in slotData
-		output[i][slotValue] = dataValue[j]
+		if slotValue !== 'X'
+			output[i][slotValue] = dataValue[j]
 
 for bonusValue, i in bonus
 	tempBonus[i] = {}
 	for slotValue, j in slotBonus
-		tempBonus[i][slotValue] = bonusValue[j]
+		if slotValue !== 'X'
+			tempBonus[i][slotValue] = bonusValue[j]
 
 for data, i in output
 	data['0'] = '0'
@@ -49,8 +51,8 @@ fs.writeFileSync './raw/data.json', output
 # ===============================================================================
 # PARSE CHAR DATA
 # ===============================================================================
-#slotChar = <[day name type rare image ]>
-slotChar = <[day X X X image ]>
+#slotChar = <[name type rare day image ]>
+slotChar = <[name X X day image ]>
 outChar = []
 for char, i in chars
 	outChar[i] = {}

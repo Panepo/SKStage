@@ -10,7 +10,7 @@ export default class CharModel extends Component {
 			for ( var i=0; i < input.length; i++ ) {
 				arrayTemp = (
 					<div key={"imgtoday"+i.toString()}>
-						<img className="menu-bonus-image" src={"./img/"+ input[i].image} height="90" width="90" />
+						<img className="menu-bonus-image" src={"./img/"+ input[i].image} alt={input[i].name}/>
 					</div>
 				)
 				outputTemp.push(arrayTemp)

@@ -63,12 +63,12 @@ Navigation = React.createClass do
 						div className: "menu-bonus-text", '今日EXP 2倍'
 						for bonus, i in @props.bonus[0]
 							div key:"imgtoday" + i,
-								img className: "menu-bonus-image", src: "./img/" + bonus.image, height: "90", width: "90",
+								img className: "menu-bonus-image", src: "./img/" + bonus.image, alt: bonus.name,
 				if @props.bonus[1].length !== 0
 					div className: "menu-bonus",
 						div className: "menu-bonus-text", '明日EXP 2倍'
 						for bonus, i in @props.bonus[1]
 							div key:"imgtomorrow" + i,
-								img className: "menu-bonus-image", src: "./img/" + bonus.image, height: "90", width: "90",
+								img className: "menu-bonus-image", src: "./img/" + bonus.image, alt: bonus.name,
 
 module.exports = Navigation
