@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { toggleChange } from '../actions'
 import ToggleButton from '../components/ToggleButton'
 import { listStage, listStageS } from '../constants/ConstantList'
-import '../css/Navigation.css'
+import '../../css/Navigation.css'
 
 class NavContainer extends Component {
 	render() {

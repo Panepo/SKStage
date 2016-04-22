@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import HeaderContainer from './HeaderContainer'
 import ContentContainer from './ContentContainer'
 import FooterContainer from './FooterContainer'
-import '../css/App.css'
+import '../../css/App.css'
 
 export default class App extends Component {
 	render() {

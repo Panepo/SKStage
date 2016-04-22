@@ -5,7 +5,7 @@ require! {
 	"./Content.react.ls": Content
 	"../stores/AppStore.ls": AppStore
 	"../actions/AppAction.ls": AppAction
-	"../css/SKStageApp.css"
+	"../../css/App.css"
 }
 
 {div } = React.DOM

@@ -3,7 +3,7 @@ require! {
 	"react": { PropTypes: ReactPropTypes }
 	"../constants/constants.ls": Constants
 	"../actions/AppAction.ls": AppAction
-	"../css/Navigation.css"
+	"../../css/Navigation.css"
 }
 
 {div, span, nav, button, img, a, label} = React.DOM

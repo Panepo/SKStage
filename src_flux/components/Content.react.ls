@@ -3,7 +3,7 @@ require! {
 	"react": { PropTypes: ReactPropTypes }
 	"../constants/constants.ls": Constants
 	"../actions/AppAction.ls": AppAction
-	"../css/Content.css"
+	"../../css/Content.css"
 	"./StageList.react.ls": StageList
 }
 

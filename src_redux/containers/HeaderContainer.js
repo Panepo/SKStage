@@ -6,7 +6,7 @@ import NavContainer from './NavContainer'
 import CharContainer from './CharContainer'
 import ImgModel from '../components/ImgModel'
 import { CbuttonActive } from '../constants/ClassName'
-import '../css/Header.css'
+import '../../css/Header.css'
 
 class HeaderContainer extends Component {
 	render() {

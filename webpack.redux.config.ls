@@ -38,12 +38,12 @@ module.exports = {
 			{
 				test: /\.(css|scss)$/
 				loaders: [ 'style', 'css', 'sass' ]
-				include: path.join(__dirname, 'src_redux')
+				include: path.join(__dirname, 'css')
 			}
 			{
 				test: /\.(png|jpg)$/
 				loaders: [ 'url-loader' ]
-				include: path.join(__dirname, 'src_redux')
+				include: path.join(__dirname, 'image')
 			}
 		]
 	}

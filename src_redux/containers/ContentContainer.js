@@ -5,7 +5,7 @@ import StageContainer from './StageContainer'
 import ToggleButton from '../components/ToggleButton'
 import { listTab } from '../constants/ConstantList'
 import { updateTime } from '../constants/ConstantDate'
-import '../css/Content.css'
+import '../../css/Content.css'
 
 class ContentContainer extends Component {
 	render() {
