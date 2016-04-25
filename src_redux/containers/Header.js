@@ -2,13 +2,13 @@ import React, { Component, PropTypes } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { modelOpen, modelClose } from '../actions'
-import NavContainer from './NavContainer'
-import CharContainer from './CharContainer'
+import NavButton from './NavButton'
+import NavChar from './NavChar'
 import ImgModel from '../components/ImgModel'
 import { CbuttonActive } from '../constants/ConstClassname'
 import '../../css/Header.css'
 
-class HeaderContainer extends Component {
+class Header extends Component {
 	render() {
 		const { imgState, modelOpen, modelClose } = this.props
 		
@@ -35,14 +35,14 @@ class HeaderContainer extends Component {
 						</button>
 					</nav>
 				</div>
-				<NavContainer />
-				<CharContainer />
+				<NavButton />
+				<NavChar />
 			</header>
 		)
 	}
 }
 
-HeaderContainer.propTypes = {
+Header.propTypes = {
 	imgState: PropTypes.object.isRequired,
 	modelOpen: PropTypes.func.isRequired,
 	modelClose: PropTypes.func.isRequired
@@ -64,4 +64,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(HeaderContainer)
+)(Header)

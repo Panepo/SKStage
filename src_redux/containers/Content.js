@@ -1,13 +1,13 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { dayChange } from '../actions'
-import StageContainer from './StageContainer'
+import StageTable from './StageTable'
 import ToggleButton from '../components/ToggleButton'
 import { listTab } from '../constants/ConstList'
 import { updateTime } from '../constants/ConstDate'
 import '../../css/Content.css'
 
-class ContentContainer extends Component {
+class Content extends Component {
 	render() {
 		const { day, dayChange } = this.props
 		
@@ -43,7 +43,7 @@ class ContentContainer extends Component {
 							<div className="mdl-tabs__tab-bar">
 								{buttonOut}
 							</div>
-							<StageContainer />
+							<StageTable />
 						</div>
 					</div>
 				</div>
@@ -52,7 +52,7 @@ class ContentContainer extends Component {
 	}
 }
 
-ContentContainer.propTypes = {
+Content.propTypes = {
 	day: PropTypes.number.isRequired,
 	dayChange: PropTypes.func.isRequired
 }
@@ -66,4 +66,4 @@ const mapStateToProps = (state) => {
 export default connect(
 	mapStateToProps,
 	{ dayChange }
-)(ContentContainer)
+)(Content)

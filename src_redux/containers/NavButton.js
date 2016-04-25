@@ -5,7 +5,7 @@ import ToggleButton from '../components/ToggleButton'
 import { listStage, listStageS } from '../constants/ConstList'
 import '../../css/Navigation.css'
 
-class NavContainer extends Component {
+class NavButton extends Component {
 	render() {
 		const { toggle, toggleChange } = this.props
 		
@@ -33,7 +33,7 @@ class NavContainer extends Component {
 	}
 }
 
-NavContainer.propTypes = {
+NavButton.propTypes = {
 	toggle: PropTypes.object.isRequired,
 	toggleChange: PropTypes.func.isRequired
 }
@@ -47,4 +47,4 @@ const mapStateToProps = (state) => {
 export default connect(
 	mapStateToProps,
 	{ toggleChange }
-)(NavContainer)
+)(NavButton)

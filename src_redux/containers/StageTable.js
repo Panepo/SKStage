@@ -5,7 +5,7 @@ import StageList from '../components/StageList'
 import { listStage, listStageS } from '../constants/ConstList'
 import '../../css/StageList.css'
 
-class StageContainer extends Component {
+class StageTable extends Component {
 	render() {
 		const { toggle, day, stageData, sortChange, charType } = this.props
 		
@@ -33,7 +33,7 @@ class StageContainer extends Component {
 	}
 }
 
-StageContainer.propTypes = {
+StageTable.propTypes = {
 	day: PropTypes.number.isRequired,
 	toggle: PropTypes.object.isRequired,
 	stageData: PropTypes.object.isRequired,
@@ -53,4 +53,4 @@ const mapStateToProps = (state) => {
 export default connect(
 	mapStateToProps,
 	{ sortChange }
-)(StageContainer)
+)(StageTable)

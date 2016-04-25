@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import HeaderContainer from './HeaderContainer'
-import ContentContainer from './ContentContainer'
-import FooterContainer from './FooterContainer'
+import Header from './Header'
+import Content from './Content'
+import Footer from './Footer'
 import '../../css/App.css'
 
 export default class App extends Component {
@@ -9,10 +9,10 @@ export default class App extends Component {
 		return (
 			<div>
 				<div className="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
-					<HeaderContainer />
+					<Header />
 					<div className="demo-ribbon mdl-shadow--4dp" />
-					<ContentContainer />
-					<FooterContainer />
+					<Content />
+					<Footer />
 				</div>
 			</div>
 		)

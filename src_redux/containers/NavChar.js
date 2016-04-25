@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { typeChange } from '../actions'
 import CharModel from '../components/CharModel'
 
-class CharContainer extends Component {
+class NavChar extends Component {
 	render() {
 		const { bonus, typeChange, charType } = this.props
 		
@@ -24,7 +24,7 @@ class CharContainer extends Component {
 	}
 }
 
-CharContainer.propTypes = {
+NavChar.propTypes = {
 	bonus: PropTypes.object.isRequired,
 	charType: PropTypes.string.isRequired,
 	typeChange: PropTypes.func.isRequired
@@ -40,4 +40,4 @@ const mapStateToProps = (state) => {
 export default connect(
 	mapStateToProps,
 	{ typeChange }
-)(CharContainer)
+)(NavChar)
