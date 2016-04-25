@@ -1,7 +1,7 @@
 import {
 	MODEL_OPEN,
 	MODEL_CLOSE
-} from '../constants/ActionTypes'
+} from '../constants/ConstActionTypes'
 
 const initialState = {
 	model0: false,

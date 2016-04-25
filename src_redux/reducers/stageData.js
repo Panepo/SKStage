@@ -1,6 +1,6 @@
 import {
 	SORT_CHANGE
-} from '../constants/ActionTypes'
+} from '../constants/ConstActionTypes'
 
 import lokijs from 'lokijs'
 import StageData from '../../raw/data.json'

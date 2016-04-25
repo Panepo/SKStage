@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { toggleChange } from '../actions'
 import ToggleButton from '../components/ToggleButton'
-import { listStage, listStageS } from '../constants/ConstantList'
+import { listStage, listStageS } from '../constants/ConstList'
 import '../../css/Navigation.css'
 
 class NavContainer extends Component {

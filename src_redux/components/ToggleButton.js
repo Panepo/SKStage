@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react'
-import { CbuttonActive, CbuttonInactive } from '../constants/ClassName'
+import { CbuttonActive, CbuttonInactive } from '../constants/ConstClassname'
 
 export default class NavButton extends Component {
 	render() {

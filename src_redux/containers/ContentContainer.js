@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import { dayChange } from '../actions'
 import StageContainer from './StageContainer'
 import ToggleButton from '../components/ToggleButton'
-import { listTab } from '../constants/ConstantList'
-import { updateTime } from '../constants/ConstantDate'
+import { listTab } from '../constants/ConstList'
+import { updateTime } from '../constants/ConstDate'
 import '../../css/Content.css'
 
 class ContentContainer extends Component {
@@ -15,7 +15,7 @@ class ContentContainer extends Component {
 		var buttonOut = []
 		var display = false
 		for (var i=0; i<listTab.length; i++){
-			if ( day.day == i ) {
+			if ( day == i ) {
 				display = true
 			} else {
 				display = false
@@ -53,13 +53,13 @@ class ContentContainer extends Component {
 }
 
 ContentContainer.propTypes = {
-	day: PropTypes.object.isRequired,
+	day: PropTypes.number.isRequired,
 	dayChange: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {
 	return {
-		day: state.dayModel
+		day: state.dayModel.day
 	}
 }
 

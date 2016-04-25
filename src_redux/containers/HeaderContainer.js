@@ -5,7 +5,7 @@ import { modelOpen, modelClose } from '../actions'
 import NavContainer from './NavContainer'
 import CharContainer from './CharContainer'
 import ImgModel from '../components/ImgModel'
-import { CbuttonActive } from '../constants/ClassName'
+import { CbuttonActive } from '../constants/ConstClassname'
 import '../../css/Header.css'
 
 class HeaderContainer extends Component {

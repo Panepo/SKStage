@@ -1,4 +1,4 @@
-import * as types from '../constants/ActionTypes'
+import * as types from '../constants/ConstActionTypes'
 
 export function modelOpen(modelId) {
 	return {
@@ -32,5 +32,12 @@ export function sortChange(sortId) {
 	return {
 		type: types.SORT_CHANGE,
 		sortId
+	}
+}
+
+export function typeChange(charType) {
+	return {
+		type: types.TYPE_CHANGE,
+		charType
 	}
 }

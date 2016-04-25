@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
-import { listThead } from '../constants/ConstantList'
-import { Ctable, Ctbody } from '../constants/ClassName'
+import { listThead } from '../constants/ConstList'
+import { Ctable, Ctbody } from '../constants/ConstClassname'
 import w1 from '../../image/w1claymore.png'
 import w2 from '../../image/w2bow.png'
 import w3 from '../../image/w3staff.png'
@@ -21,7 +21,7 @@ export default class StageList extends Component {
 	}
 	
 	generateTableData(out, i, j, list) {
-		const { id, day } = this.props
+		const { id, day, charType } = this.props
 		
 		if ( j == 0 ) {
 			return (
@@ -45,25 +45,45 @@ export default class StageList extends Component {
 							return out[list]
 					}
 				case "exp":
-					if (out[day.toString()] == "1")
-						return <label className="expBonus">{out["exp12"]}</label>
-					else
-						return out[list]
+					if (out[day.toString()] == "1") {
+						if ( out["type"] === charType ) {
+							return <label className="expBonus">{Math.floor(out[list]*1.4)}</label>
+						} else {
+							return <label className="expBonus">{Math.floor(out[list]*1.2)}</label>
+						}
+					} else {
+						if ( out["type"] === charType ) {
+							return <label className="expBonus">{Math.floor(out[list]*1.2)}</label>
+						} else {
+							return out[list]
+						}
+					}
 				case "expM":
-					if (out[day.toString()] == "1")
-						return <label className="expBonus">{out["exp12M"]}</label>
-					else
-						return out[list]
+					if (out[day.toString()] == "1") {
+						if ( out["type"] === charType ) {
+							return <label className="expBonus">{(Math.floor(out["exp"]*1.4)/out["point"]).toFixed(2)}</label>
+						} else {
+							return <label className="expBonus">{(Math.floor(out["exp"]*1.2)/out["point"]).toFixed(2)}</label>
+						}
+					} else {
+						if ( out["type"] === charType ) {
+							return <label className="expBonus">{(Math.floor(out["exp"]*1.2)/out["point"]).toFixed(2)}</label>
+						} else {
+							return out[list]
+						}
+					}
 				case "gold":
-					if (out[day.toString()] == "2")
-						return <label className="goldBonus">{out["gold12"]}</label>
-					else
+					if (out[day.toString()] == "2") {
+						return <label className="goldBonus">{Math.floor(out[list]*1.2)}</label>
+					} else {
 						return out[list]
+					}
 				case "goldM":
-					if (out[day.toString()] == "2")
-						return <label className="goldBonus">{out["gold12M"]}</label>
-					else
+					if (out[day.toString()] == "2") {
+						return <label className="goldBonus">{(Math.floor(out["gold"]*1.2)/out["point"]).toFixed(2)}</label>
+					} else {
 						return out[list]
+					}
 				default:
 					return out[list]
 			}
@@ -143,6 +163,7 @@ export default class StageList extends Component {
 }
 
 StageList.propTypes = {
+	charType: PropTypes.string,
 	id: PropTypes.string,
 	display: PropTypes.bool,
 	day: PropTypes.number,

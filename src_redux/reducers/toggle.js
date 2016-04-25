@@ -1,6 +1,6 @@
 import {
 	TOGGLE_CHANGE
-} from '../constants/ActionTypes'
+} from '../constants/ConstActionTypes'
 
 const initialState = {
 	all: false,

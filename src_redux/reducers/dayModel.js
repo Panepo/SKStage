@@ -1,6 +1,6 @@
 import {
 	DAY_CHANGE
-} from '../constants/ActionTypes'
+} from '../constants/ConstActionTypes'
 
 var today = new Date()
 var localoffset = -(today.getTimezoneOffset()/60)
