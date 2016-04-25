@@ -14,6 +14,7 @@ Navigation = React.createClass do
 	propTypes:
 		toggle: ReactPropTypes.array.isRequired
 		bonus: ReactPropTypes.array.isRequired
+		type: ReactPropTypes.string.isRequired
 		
 	getInitialState: -> {
 		toggleAll: false
@@ -43,6 +44,9 @@ Navigation = React.createClass do
 				
 		AppAction.toggleChange toggle
 
+	handleClick: (charType) !->
+		AppAction.typeChange charType
+
 	render: ->
 		div null,
 			nav className: "floating-menu mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col",
@@ -62,13 +66,19 @@ Navigation = React.createClass do
 					div className: "menu-bonus",
 						div className: "menu-bonus-text", '今日EXP 2倍'
 						for bonus, i in @props.bonus[0]
-							div key:"imgtoday" + i,
-								img className: "menu-bonus-image", src: "./img/" + bonus.image, alt: bonus.name,
+							button className: "img-button mdl-button mdl-js-button mdl-js-ripple-effect", key:"imgtoday" + i, onClick: @handleClick.bind(null, bonus.type),
+								if @props.type == 'none' or @props.type == bonus.type
+									img className: "menu-bonus-image img-active", src: "./img/" + bonus.image, alt: bonus.name,
+								else
+									img className: "menu-bonus-image img-inactive", src: "./img/" + bonus.image, alt: bonus.name,
 				if @props.bonus[1].length !== 0
 					div className: "menu-bonus",
 						div className: "menu-bonus-text", '明日EXP 2倍'
 						for bonus, i in @props.bonus[1]
-							div key:"imgtomorrow" + i,
-								img className: "menu-bonus-image", src: "./img/" + bonus.image, alt: bonus.name,
+							button className: "img-button mdl-button mdl-js-button mdl-js-ripple-effect", key:"imgtomorrow" + i, onClick: @handleClick.bind(null, bonus.type),
+								if @props.type == 'none' or @props.type == bonus.type
+									img className: "menu-bonus-image img-active", src: "./img/" + bonus.image, alt: bonus.name,
+								else
+									img className: "menu-bonus-image img-inactive", src: "./img/" + bonus.image, alt: bonus.name,
 
 module.exports = Navigation

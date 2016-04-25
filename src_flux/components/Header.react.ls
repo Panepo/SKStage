@@ -16,6 +16,7 @@ Header = React.createClass do
 	propTypes:
 		toggle: ReactPropTypes.array.isRequired
 		bonus: ReactPropTypes.array.isRequired
+		type: ReactPropTypes.string.isRequired
 	
 	getInitialState: -> {
 		modal1Display: false
@@ -58,6 +59,7 @@ Header = React.createClass do
 			Navigation {
 				toggle:@props.toggle
 				bonus:@props.bonus
+				type:@props.type
 			}, null
 
 module.exports = Header

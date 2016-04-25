@@ -20,6 +20,7 @@ StageList = React.createClass do
 		output: ReactPropTypes.array.isRequired
 		display: ReactPropTypes.bool.isRequired
 		day: ReactPropTypes.number.isRequired
+		type: ReactPropTypes.string.isRequired
 	
 	componentDidUpdate: !->
 		componentHandler.upgradeDom!
@@ -50,22 +51,34 @@ StageList = React.createClass do
 				out[list]
 		case "exp"
 			if out[@props.day] is "1"
-				label className:"expBonus", out["exp12"]
+				if out["type"] is @props.type
+					label className:"expBonus", Math.floor out[list]*1.4
+				else
+					label className:"expBonus", Math.floor out[list]*1.2
 			else
-				out[list]
+				if out["type"] is @props.type
+					label className:"expBonus", Math.floor out[list]*1.2
+				else
+					out[list]
 		case "expM"
 			if out[@props.day] is "1"
-				label className:"expBonus", out["exp12M"]
+				if out["type"] is @props.type
+					label className:"expBonus", (Math.floor(out["exp"]*1.4)/out["point"]).toFixed(2)
+				else
+					label className:"expBonus", (Math.floor(out["exp"]*1.2)/out["point"]).toFixed(2)
 			else
-				out[list]
+				if out["type"] is @props.type
+					label className:"expBonus", Math.floor out[list]*1.2
+				else
+					out[list]
 		case "gold"
 			if out[@props.day] is "2"
-				label className:"goldBonus", out["gold12"]
+				label className:"goldBonus", Math.floor out[list]*1.2
 			else
 				out[list]
 		case "goldM"
 			if out[@props.day] is "2"
-				label className:"goldBonus", out["gold12M"]
+				label className:"goldBonus", (Math.floor(out["gold"]*1.2)/out["point"]).toFixed(2)
 			else
 				out[list]
 		default

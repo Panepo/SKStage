@@ -19,5 +19,10 @@ AppAction =
 			actionType: ConstActions.sortChange
 			sortValue: sortValue
 			)
-
+	typeChange: (charType) !->
+		AppDispatcher.dispatch(
+			actionType: ConstActions.typeChange
+			charType: charType
+			)
+	
 module.exports = AppAction

@@ -32,6 +32,7 @@ _data = {
 	output: []
 	toggle: [0 0 0 0 0 0 1]
 	bonus: []
+	type: "none"
 }
 
 # ========== Values Initial ==========
@@ -91,6 +92,12 @@ sortChange = (sortValue) !->
 	stageThirdH = dbStage.chain!.find({ 'stage': 3 }).find({ 'diff': 'H' }).simplesort(sortValue).data!
 	_data.output = [stageFirstN, stageFirstH, stageSecondN, stageSecondH, stageSecondT, stageThirdN, stageThirdH]
 
+typeChange = (charType) !->
+	if _data.type is charType
+		_data.type = 'none'
+	else
+		_data.type = charType
+
 # ===============================================================================
 # APPSTORE MAIN
 # ===============================================================================
@@ -118,6 +125,9 @@ AppDispatcher.register( (action) !->
 		AppStore.emitChange!
 	case ConstActions.sortChange
 		sortChange action.sortValue
+		AppStore.emitChange!
+	case ConstActions.typeChange
+		typeChange action.charType
 		AppStore.emitChange!
 )
 

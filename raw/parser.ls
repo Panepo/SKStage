@@ -7,7 +7,7 @@ require! {
 # ===============================================================================
 # PARSE STAGE DATA
 # ===============================================================================
-slotData = <[stage diff name point type exp exp12 expM exp12M gold gold12 goldM gold12M title]>
+slotData = <[stage diff name point type exp X expM X gold X goldM X title]>
 slotBonus = <[name 0 1 2 3 4 5 6]>
 
 output = []
@@ -52,7 +52,7 @@ fs.writeFileSync './raw/data.json', output
 # PARSE CHAR DATA
 # ===============================================================================
 #slotChar = <[name type rare day image ]>
-slotChar = <[name X X day image ]>
+slotChar = <[name type X day image ]>
 outChar = []
 for char, i in chars
 	outChar[i] = {}

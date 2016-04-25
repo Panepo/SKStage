@@ -17,6 +17,7 @@ Content = React.createClass do
 	propTypes:
 		day: ReactPropTypes.number.isRequired
 		output: ReactPropTypes.array.isRequired
+		type: ReactPropTypes.string.isRequired
 
 	handleDayChange: (day) !->
 		AppAction.dayChange day
@@ -43,6 +44,7 @@ Content = React.createClass do
 									output: @props.output[i]
 									display: true
 									day:@props.day
+									type:@props.type
 								}, null
 							else
 								StageList {
@@ -51,6 +53,7 @@ Content = React.createClass do
 									output: @props.output[i]
 									display: false
 									day:@props.day
+									type:@props.type
 								}, null
 
 module.exports = Content

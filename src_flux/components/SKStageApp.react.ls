@@ -38,12 +38,14 @@ SKStageApp = React.createClass do
 				Header {
 					toggle:@state.data.toggle
 					bonus:@state.data.bonus
+					type:@state.data.type
 				}, null
 				div className: "demo-ribbon mdl-shadow--4dp", null
 				Content { 
 					day:@state.data.day
 					output:@state.data.output
 					toggle:@state.data.toggle
+					type:@state.data.type
 				}, null
 				Footer null
 
