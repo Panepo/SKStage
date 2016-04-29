@@ -37,6 +37,7 @@ chars = [
 ["プリミュラ・コノエ"						"魔法"	"SR"	25	"Primula.png"]
 ["ニコラコポーロゥ・ヒガシクニ"	"魔法"	"SR"	16	"Nikolakopoulou.png"]
 ["クレア・コイソ"								"魔法"	"SR"	14	"Crea.png"]
+["ミレイア・ヨナイ"							"魔法"	"SR"	28	"Mireia.png"]
 ["サン"													"魔法"	"N"		9		"Sun.png"]
 ["シュウ"												"魔法"	"N"		10	"Syuu.png"]
 ["シホ"													"魔法"	"N"		11	"Shiho.png"]
