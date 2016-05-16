@@ -10,7 +10,9 @@ const initialState = {
 	s2hard: false,
 	s2twist: false,
 	s3normal: false,
-	s3hard: true
+	s3hard: true,
+	s4normal: false,
+	s4hard: false
 }
 
 export default function toggle(state = initialState, action) {
@@ -27,7 +29,9 @@ export default function toggle(state = initialState, action) {
 							s2hard: true,
 							s2twist: true,
 							s3normal: true,
-							s3hard: true
+							s3hard: true,
+							s4normal: true,
+							s4hard: true
 						})
 					} else {
 						return Object.assign({}, state, {
@@ -38,7 +42,9 @@ export default function toggle(state = initialState, action) {
 							s2hard: false,
 							s2twist: false,
 							s3normal: false,
-							s3hard: false
+							s3hard: false,
+							s4normal: false,
+							s4hard: false,
 						})
 					}
 				case "s1normal":
@@ -109,6 +115,26 @@ export default function toggle(state = initialState, action) {
 					} else {
 						return Object.assign({}, state, {
 							s3hard: false
+						})
+					}
+				case "s4normal":
+					if ( state.s4normal === false ) {
+						return Object.assign({}, state, {
+							s4normal: true
+						})
+					} else {
+						return Object.assign({}, state, {
+							s4normal: false
+						})
+					}
+				case "s4hard":
+					if ( state.s4hard === false ) {
+						return Object.assign({}, state, {
+							s4hard: true
+						})
+					} else {
+						return Object.assign({}, state, {
+							s4hard: false
 						})
 					}
 			}

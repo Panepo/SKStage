@@ -30,7 +30,7 @@ for data in CharData
 _data = {
 	day: 0
 	output: []
-	toggle: [0 0 0 0 0 0 1]
+	toggle: [0 0 0 0 0 0 1 0 0]
 	bonus: []
 	type: "none"
 }
@@ -71,7 +71,9 @@ stageSecondH = dbStage.chain!.find({ 'stage': 2 }).find({ 'diff': 'H' }).simples
 stageSecondT = dbStage.chain!.find({ 'stage': 2 }).find({ 'diff': 'T' }).simplesort('name').data!
 stageThirdN = dbStage.chain!.find({ 'stage': 3 }).find({ 'diff': 'N' }).simplesort('name').data!
 stageThirdH = dbStage.chain!.find({ 'stage': 3 }).find({ 'diff': 'H' }).simplesort('name').data!
-_data.output = [stageFirstN, stageFirstH, stageSecondN, stageSecondH, stageSecondT, stageThirdN, stageThirdH]
+stageFourthN = dbStage.chain!.find({ 'stage': 4 }).find({ 'diff': 'N' }).simplesort('name').data!
+stageFourthH = dbStage.chain!.find({ 'stage': 4 }).find({ 'diff': 'H' }).simplesort('name').data!
+_data.output = [stageFirstN, stageFirstH, stageSecondN, stageSecondH, stageSecondT, stageThirdN, stageThirdH, stageFourthN, stageFourthH]
 
 # ===============================================================================
 # APPSTORE FUNCTIONS
@@ -90,7 +92,9 @@ sortChange = (sortValue) !->
 	stageSecondT = dbStage.chain!.find({ 'stage': 2 }).find({ 'diff': 'T' }).simplesort(sortValue).data!
 	stageThirdN = dbStage.chain!.find({ 'stage': 3 }).find({ 'diff': 'N' }).simplesort(sortValue).data!
 	stageThirdH = dbStage.chain!.find({ 'stage': 3 }).find({ 'diff': 'H' }).simplesort(sortValue).data!
-	_data.output = [stageFirstN, stageFirstH, stageSecondN, stageSecondH, stageSecondT, stageThirdN, stageThirdH]
+	stageFourthN = dbStage.chain!.find({ 'stage': 4 }).find({ 'diff': 'N' }).simplesort(sortValue).data!
+	stageFourthH = dbStage.chain!.find({ 'stage': 4 }).find({ 'diff': 'H' }).simplesort(sortValue).data!
+	_data.output = [stageFirstN, stageFirstH, stageSecondN, stageSecondH, stageSecondT, stageThirdN, stageThirdH, stageFourthN, stageFourthH]
 
 typeChange = (charType) !->
 	if _data.type is charType
