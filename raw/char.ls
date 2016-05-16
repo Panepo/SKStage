@@ -22,6 +22,7 @@ chars = [
 ["キララ・タナカ"								"射撃"	"SR"	18	"Kirara.png"]
 ["ティアラ・イヌカイ"						"射撃"	"SR"	20	"Tiara.png"]
 ["キャロライン・ヒラヌマ"				"射撃"	"SR"	26	"Caroline.png"]
+["カルロッタ・スズキ"						"射撃"	"SR"	15	"Carlotta.png"]
 
 ["アオバ"												"射撃"	"N"		5		"Aoba.png"]
 ["ワカバ"												"射撃"	"N"		6		"Wakaba.png"]
