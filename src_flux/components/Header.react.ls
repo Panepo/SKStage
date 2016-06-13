@@ -53,7 +53,8 @@ Header = React.createClass do
 				span className: "mdl-layout-title", null
 				div className: "mdl-layout-spacer", null
 				nav className: "mdl-navigation",
-					a className: Constants.buttonClassActive, href: "http://wikiwiki.jp/seimani/", "Wiki"
+					a className: Constants.buttonClassActive, href: "http://www.dmm.com/netgame_s/seiken/", "政剣マニフェスティア"
+					a className: Constants.buttonClassActive, href: "http://wikiwiki.jp/seimani/", "攻略wiki"
 					button className: Constants.buttonClassActive, onClick: @handleClick.bind(null, "modal1"), "EXPボーナス日程表"
 					button className: Constants.buttonClassActive, onClick: @handleClick.bind(null, "modal2"), "贈り物表"
 			Navigation {

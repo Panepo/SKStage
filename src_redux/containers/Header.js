@@ -26,7 +26,8 @@ class Header extends Component {
 					<span className="mdl-layout-title"></span>
 					<div className="mdl-layout-spacer"></div>
 					<nav className="mdl-navigation">
-						<a className={CbuttonActive} href="http://wikiwiki.jp/seimani/">Wiki</a>
+						<a className={CbuttonActive} href="http://www.dmm.com/netgame_s/seiken/">政剣マニフェスティア</a>
+						<a className={CbuttonActive} href="http://wikiwiki.jp/seimani/">攻略wiki</a>
 						<button className={CbuttonActive} onClick={() => modelOpen('model0')}>
 							EXPボーナス日程表
 						</button>
