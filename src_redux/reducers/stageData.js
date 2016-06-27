@@ -21,7 +21,9 @@ const initialState = {
 	s3normal: dbStage.chain().find({ 'stage': 3 }).find({ 'diff': 'N' }).simplesort('name').data(),
 	s3hard: dbStage.chain().find({ 'stage': 3 }).find({ 'diff': 'H' }).simplesort('name').data(),
 	s4normal: dbStage.chain().find({ 'stage': 4 }).find({ 'diff': 'N' }).simplesort('name').data(),
-	s4hard: dbStage.chain().find({ 'stage': 4 }).find({ 'diff': 'H' }).simplesort('name').data()
+	s4hard: dbStage.chain().find({ 'stage': 4 }).find({ 'diff': 'H' }).simplesort('name').data(),
+	s5normal: dbStage.chain().find({ 'stage': 5 }).find({ 'diff': 'N' }).simplesort('name').data(),
+	s5hard: dbStage.chain().find({ 'stage': 5 }).find({ 'diff': 'H' }).simplesort('name').data()
 }
 
 export default function stageData(state = initialState, action) {
@@ -36,7 +38,9 @@ export default function stageData(state = initialState, action) {
 				s3normal: dbStage.chain().find({ 'stage': 3 }).find({ 'diff': 'N' }).simplesort(action.sortId).data(),
 				s3hard: dbStage.chain().find({ 'stage': 3 }).find({ 'diff': 'H' }).simplesort(action.sortId).data(),
 				s4normal: dbStage.chain().find({ 'stage': 4 }).find({ 'diff': 'N' }).simplesort(action.sortId).data(),
-				s4hard: dbStage.chain().find({ 'stage': 4 }).find({ 'diff': 'H' }).simplesort(action.sortId).data()
+				s4hard: dbStage.chain().find({ 'stage': 4 }).find({ 'diff': 'H' }).simplesort(action.sortId).data(),
+				s5normal: dbStage.chain().find({ 'stage': 5 }).find({ 'diff': 'N' }).simplesort(action.sortId).data(),
+				s5hard: dbStage.chain().find({ 'stage': 5 }).find({ 'diff': 'H' }).simplesort(action.sortId).data()
 			})
 		}
 		default:

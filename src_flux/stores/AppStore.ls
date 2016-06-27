@@ -30,7 +30,7 @@ for data in CharData
 _data = {
 	day: 0
 	output: []
-	toggle: [0 0 0 0 0 0 1 0 0]
+	toggle: [0 0 0 0 0 0 0 0 1 0 0]
 	bonus: []
 	type: "none"
 }
@@ -73,7 +73,9 @@ stageThirdN = dbStage.chain!.find({ 'stage': 3 }).find({ 'diff': 'N' }).simpleso
 stageThirdH = dbStage.chain!.find({ 'stage': 3 }).find({ 'diff': 'H' }).simplesort('name').data!
 stageFourthN = dbStage.chain!.find({ 'stage': 4 }).find({ 'diff': 'N' }).simplesort('name').data!
 stageFourthH = dbStage.chain!.find({ 'stage': 4 }).find({ 'diff': 'H' }).simplesort('name').data!
-_data.output = [stageFirstN, stageFirstH, stageSecondN, stageSecondH, stageSecondT, stageThirdN, stageThirdH, stageFourthN, stageFourthH]
+stageFifthN = dbStage.chain!.find({ 'stage': 5 }).find({ 'diff': 'N' }).simplesort('name').data!
+stageFifthH = dbStage.chain!.find({ 'stage': 5 }).find({ 'diff': 'H' }).simplesort('name').data!
+_data.output = [stageFirstN, stageFirstH, stageSecondN, stageSecondH, stageSecondT, stageThirdN, stageThirdH, stageFourthN, stageFourthH, stageFifthN, stageFifthH]
 
 # ===============================================================================
 # APPSTORE FUNCTIONS
@@ -94,7 +96,9 @@ sortChange = (sortValue) !->
 	stageThirdH = dbStage.chain!.find({ 'stage': 3 }).find({ 'diff': 'H' }).simplesort(sortValue).data!
 	stageFourthN = dbStage.chain!.find({ 'stage': 4 }).find({ 'diff': 'N' }).simplesort(sortValue).data!
 	stageFourthH = dbStage.chain!.find({ 'stage': 4 }).find({ 'diff': 'H' }).simplesort(sortValue).data!
-	_data.output = [stageFirstN, stageFirstH, stageSecondN, stageSecondH, stageSecondT, stageThirdN, stageThirdH, stageFourthN, stageFourthH]
+	stageFifthN = dbStage.chain!.find({ 'stage': 5 }).find({ 'diff': 'N' }).simplesort(sortValue).data!
+	stageFifthH = dbStage.chain!.find({ 'stage': 5 }).find({ 'diff': 'H' }).simplesort(sortValue).data!
+	_data.output = [stageFirstN, stageFirstH, stageSecondN, stageSecondH, stageSecondT, stageThirdN, stageThirdH, stageFourthN, stageFourthH, stageFifthN, stageFifthH]
 
 typeChange = (charType) !->
 	if _data.type is charType

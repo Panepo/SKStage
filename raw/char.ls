@@ -9,6 +9,7 @@ chars = [
 ["マセッタ・テラウチ"						"近接"	"R"		10	"Musetta.png"]
 ["リン・ハヤシ"									"近接"	"SR"	24	"Rin.png"]
 ["ユーリア・アベ"								"近接"	"SR"	27	"Yulia.png"]
+["イシュリーヌ・シデハラ"				"近接"	"SR"	17	"Ishrene.png"]
 
 ["エリカ"												"近接"	"N"		1		"Elika.png"]
 ["エリナ"												"近接"	"N"		2		"Elina.png"]
@@ -23,6 +24,7 @@ chars = [
 ["ティアラ・イヌカイ"						"射撃"	"SR"	20	"Tiara.png"]
 ["キャロライン・ヒラヌマ"				"射撃"	"SR"	26	"Caroline.png"]
 ["カルロッタ・スズキ"						"射撃"	"SR"	15	"Carlotta.png"]
+["トルーディ・オオクボ"					"射撃"	"SR"	17	"Trudy.png"]
 
 ["アオバ"												"射撃"	"N"		5		"Aoba.png"]
 ["ワカバ"												"射撃"	"N"		6		"Wakaba.png"]
@@ -41,6 +43,7 @@ chars = [
 ["ニコラコポーロゥ・ヒガシクニ"	"魔法"	"SR"	16	"Nikolakopoulou.png"]
 ["クレア・コイソ"								"魔法"	"SR"	14	"Crea.png"]
 ["ミレイア・ヨナイ"							"魔法"	"SR"	28	"Mireia.png"]
+["ジル・ヨシダ"									"魔法"	"SR"	18	"Zill.png"]
 
 ["サン"													"魔法"	"N"		9		"Sun.png"]
 ["シュウ"												"魔法"	"N"		10	"Syuu.png"]
