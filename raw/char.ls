@@ -10,6 +10,8 @@ chars = [
 ["リン・ハヤシ"									"近接"	"SR"	24	"Rin.png"]
 ["ユーリア・アベ"								"近接"	"SR"	27	"Yulia.png"]
 ["イシュリーヌ・シデハラ"				"近接"	"SR"	17	"Ishrene.png"]
+["ダーシー・キド"								"近接"	"SR"	18	"Darcy.png"]
+["アシュリー・カツ"							"近接"	"SR"	30	"Asury.png"]
 
 ["エリカ"												"近接"	"N"		1		"Elika.png"]
 ["エリナ"												"近接"	"N"		2		"Elina.png"]
@@ -53,6 +55,7 @@ chars = [
 ["ビッキー・トウジョウ"					"重装"	"SR"	13	"Bikky.png"]
 ["コレット・タカハシ"						"重装"	"SR"	13	"Colette.png"]
 ["モリー・サイゴウ"							"重装"	"SR"	16	"Morry.png"]
+["タイス・イタガキ"							"重装"	"SR"	1		"Tais.png"]
 ["レイシィ・ワカツキ"						"重装"	"R"		17	"Leshy.png"]
 ["エレナ"												"重装"	"N"		4		"Elena.png"]
 
